@@ -1,0 +1,37 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 4rem;
+  gap: 2rem;
+  background-color: #08c3bb;
+  color: aliceblue;
+}
+img {
+  height: 50px;
+  width: 200px;
+}
+p {
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.nav__btns {
+  display: flex;
+  gap: 1rem;
+}
+button {
+  font-size: 16px;
+  border-radius: 24px;
+  padding: 5px 20px;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  scale: 1.2;
+  transition: ease-out 0.3s;
+}
+.nav__btns-singUp {
+  background-color: #41b9fb;
+  color: white;
+}

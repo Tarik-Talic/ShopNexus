@@ -1,33 +1,39 @@
-nav {
+ul {
+  list-style-type: none;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin: 0;
   height: 4rem;
   gap: 2rem;
   background-color: #08c3bb;
   color: aliceblue;
 }
-img {
+.mainLogo {
   height: 50px;
   width: 200px;
 }
-p {
+li {
+  text-decoration: none;
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
+}
+li > *:hover {
+  color: #08c3bb;
 }
 .nav__btns {
   display: flex;
   gap: 1rem;
 }
-button {
+.nav__btns > button {
   font-size: 16px;
   border-radius: 24px;
   padding: 5px 20px;
   border: none;
   cursor: pointer;
 }
-button:hover {
+.nav__btns > button:hover {
   scale: 1.2;
   transition: ease-out 0.3s;
 }

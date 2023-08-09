@@ -9,12 +9,12 @@ export default function ProductCard(props) {
         <div className="card-img">
           <img className="productImg" src={props.img} />
         </div>
-        <div className="card-title">{props.title}</div>
+        <div className="card-title">{props.title.substring(0, 40)}</div>
         <div className="card-subtitle">
-          {showMore ? props.description : `${props.description.substring(0, 100)}`}
+          {showMore ? props.description : `${props.description.substring(0, 100)}...`}
         </div>
         <button className="showMoreBtn" onClick={() => setShowMore(!showMore)}>
-          Show More...
+          {showMore ? "Show Less..." : "Show More..."}
         </button>
 
         <div className="card-divider">

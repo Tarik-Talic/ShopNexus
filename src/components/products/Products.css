@@ -1,6 +1,27 @@
 .productContainer {
-  margin: 1rem 20px;
+  margin: 2rem 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+.productCategories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.productCategories > p {
+  color: aliceblue;
+  border-bottom: 1px solid aliceblue;
+  cursor: pointer;
+}
+.productCategories > p:hover {
+  color: #41b9fb;
+  border-bottom: 1px solid #41b9fb;
+}
+.loader {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

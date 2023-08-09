@@ -22,22 +22,25 @@ li {
 li > *:hover {
   color: #08c3bb;
 }
+
 .nav__btns {
   display: flex;
   gap: 1rem;
 }
-.nav__btns > button {
+.nav__btns-singUp {
+  background-color: #41b9fb;
+  color: white;
+}
+.nav__btns-login,
+.nav__btns-singUp {
   font-size: 16px;
   border-radius: 24px;
   padding: 5px 20px;
   border: none;
   cursor: pointer;
 }
-.nav__btns > button:hover {
+.nav__btns-login:hover,
+.nav__btns-singUp:hover {
   scale: 1.2;
   transition: ease-out 0.3s;
-}
-.nav__btns-singUp {
-  background-color: #41b9fb;
-  color: white;
 }

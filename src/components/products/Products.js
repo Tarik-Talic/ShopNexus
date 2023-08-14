@@ -1,59 +1,56 @@
 import React, { useState } from "react";
 import "./Products.css";
-import ProductCard from "../productCard/ProductCard";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+
 import { InfinitySpin } from "react-loader-spinner";
+import { Link, Outlet, NavLink } from "react-router-dom";
+import { useAllProductData, useCategoryData } from "../../hooks/useApiData";
+import Category from "./Category";
 
 function Products() {
-  const [categoryData, setCategoryData] = useState("");
-  console.log("this is the category selected " + categoryData);
-  const productQuery = useQuery({
-    queryKey: ["product"],
-    queryFn: () => {
-      const data = axios.get("https://fakestoreapi.com/products").then((res) => res.data);
-      return data;
-    },
-  });
-  const categoryQuery = useQuery({
-    queryKey: ["category"],
-    queryFn: () => {
-      const data = axios.get(
-        `https://fakestoreapi.com/products/category/${categoryData}`
-      );
-      return data;
-    },
-  });
-  console.log(productQuery);
-  if (productQuery.isLoading)
+  const [active, setActive] = useState(false);
+  const [categoryData, setCategoryData] = useState("eletronics");
+  const linkStyle = {
+    textDecoration: "none",
+    color: "white",
+  };
+  const { isLoading, data } = useAllProductData();
+  const { data: category } = useCategoryData();
+  console.log(category);
+
+  if (isLoading)
     return (
       <div className="loader">
         <InfinitySpin width="200" color="#41b9fb" />
       </div>
     );
 
-  const productsElemenets = productQuery.data.map((item) => {
+  function handleClick(categoryName) {
+    setCategoryData(categoryName);
+    setActive(true);
+  }
+  const categories = category?.data.map((item) => {
     return (
-      <ProductCard
-        key={item.id}
-        title={item.title}
-        description={item.description}
-        price={item.price}
-        img={item.image}
-      />
+      <NavLink
+        style={linkStyle}
+        to={`category/${item}`}
+        onClick={() => handleClick(item)}
+      >
+        <li key={item}>{item.charAt(0).toUpperCase() + item.slice(1)}</li>
+      </NavLink>
     );
   });
-
+  console.log(categoryData);
   return (
     <>
       <span className="productCategories">
-        <p>All</p>
-        <p onClick={() => setCategoryData("eletronics")}>Electronics</p>
-        <p onClick={() => setCategoryData("jewelery")}>Jewelry</p>
-        <p onClick={() => setCategoryData("men's clothing")}>Mens Clothing</p>
-        <p onClick={() => setCategoryData("women's clothing")}>Womens Clothing</p>
+        <Link style={linkStyle} to={`/products`}>
+          <li onClick={() => setActive(false)}>All</li>
+        </Link>
+        {categories}
       </span>
-      <div className="productContainer">{productsElemenets}</div>
+      <Outlet />
+
+      <Category data={data} categoryName={categoryData} active={active} />
     </>
   );
 }

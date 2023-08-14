@@ -8,14 +8,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 4rem;
 }
-.productCategories > p {
+.productCategories > * {
   color: aliceblue;
   border-bottom: 1px solid aliceblue;
   cursor: pointer;
 }
-.productCategories > p:hover {
+.productCategories > *:hover {
+  color: #41b9fb;
+  border-bottom: 1px solid #41b9fb;
+}
+.productCategories > *:active {
   color: #41b9fb;
   border-bottom: 1px solid #41b9fb;
 }
@@ -24,4 +28,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+li {
+  list-style: none;
+  text-decoration: none;
+}
+a.active > * {
+  color: #41b9fb;
 }

@@ -8,14 +8,13 @@ import Category from "./Category";
 
 function Products() {
   const [active, setActive] = useState(false);
-  const [categoryData, setCategoryData] = useState("eletronics");
+  const [categoryData, setCategoryData] = useState(null);
   const linkStyle = {
     textDecoration: "none",
     color: "white",
   };
   const { isLoading, data } = useAllProductData();
   const { data: category } = useCategoryData();
-  console.log(category);
 
   if (isLoading)
     return (
@@ -31,20 +30,21 @@ function Products() {
   const categories = category?.data.map((item) => {
     return (
       <NavLink
+        key={item}
         style={linkStyle}
         to={`category/${item}`}
         onClick={() => handleClick(item)}
       >
-        <li key={item}>{item.charAt(0).toUpperCase() + item.slice(1)}</li>
+        <p key={item}>{item.charAt(0).toUpperCase() + item.slice(1)}</p>
       </NavLink>
     );
   });
-  console.log(categoryData);
+
   return (
     <>
       <span className="productCategories">
         <Link style={linkStyle} to={`/products`}>
-          <li onClick={() => setActive(false)}>All</li>
+          <p onClick={() => setActive(false)}>All</p>
         </Link>
         {categories}
       </span>

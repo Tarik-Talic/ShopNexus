@@ -1,5 +1,5 @@
 .productContainer {
-  margin: 2rem 20px;
+  margin: 4rem 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -29,10 +29,7 @@
   align-items: center;
   justify-content: center;
 }
-li {
-  list-style: none;
-  text-decoration: none;
-}
-a.active > * {
+
+a.active > p {
   color: #41b9fb;
 }

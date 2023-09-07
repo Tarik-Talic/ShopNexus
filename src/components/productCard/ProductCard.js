@@ -1,10 +1,27 @@
 import React, { useState } from "react";
 import "./ProductCard.css";
 import { useCart } from "react-use-cart";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 export default function ProductCard(props) {
   const [showMore, setShowMore] = useState(false);
 
   const { addItem } = useCart();
+
+  const notifyCart = () => {
+    addItem(props.item);
+    toast.success("Item added to cart.", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
   return (
     <div>
       <div className="card">
@@ -24,7 +41,8 @@ export default function ProductCard(props) {
             <div className="card-price">
               <span>$</span> {props.price}
             </div>
-            <button className="card-btn" onClick={() => addItem(props.item)}>
+            <button className="card-btn" onClick={notifyCart}>
+              <ToastContainer />
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path d="m397.78 316h-205.13a15 15 0 0 1 -14.65-11.67l-34.54-150.48a15 15 0 0 1 14.62-18.36h274.27a15 15 0 0 1 14.65 18.36l-34.6 150.48a15 15 0 0 1 -14.62 11.67zm-193.19-30h181.25l27.67-120.48h-236.6z"></path>
                 <path d="m222 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path>

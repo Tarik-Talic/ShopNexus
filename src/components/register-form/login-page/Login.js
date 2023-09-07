@@ -1,39 +1,82 @@
-import React, { useState } from "react";
-import "./Login.css";
-function Login(props) {
-  // const [formData, setFormData] = useState({
-  //   userName: "",
-  //   password: "",
-  // });
-  // function handleChange(e) {
-  //   const { name } = e.target;
-  // }
-  function handleSubmit(e) {
-    e.preventDefault();
-    // submitToApi(formData)
-    // console.log(formData);
-  }
+import React, { useEffect, useState } from "react";
+import "../Form.css";
+import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { DevTool } from "@hookform/devtools";
+import SuccessForm from "../../../assets/Goal (1).gif";
+
+function Login() {
+  const [account, setAccount] = useState({
+    firstName: "",
+    password: "",
+  });
+  console.log(account);
+  const form = useForm();
+  const { register, control, handleSubmit, formState, reset } = form;
+  const { errors, isSubmitSuccessful } = formState;
+  const onSubmit = (data) => {
+    setAccount(() => {
+      return {
+        firstName: data.username,
+        password: data.password,
+      };
+    });
+    console.log("form Submitted", data);
+  };
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset();
+    }
+  }, [isSubmitSuccessful, reset]);
   return (
-    <div className="login-container">
-      <form className="login-card" onSubmit={handleSubmit}>
-        <h2 className="login-header">{props.header}</h2>
-        <input
-          className="email-input"
-          placeholder="Username"
-          type="text"
-          name="userName"
-        ></input>
-        <input
-          className="password-input"
-          placeholder="Password"
-          type="password"
-          name="password"
-        ></input>
-        <button className="login-submitBtn" type="submit">
-          Submit
-        </button>
-        <p className="login-passwordReset">Forgot your password? </p>
-      </form>
+    <div className="form-container">
+      {account.firstName && account.password === "admin" ? (
+        <div className="flex-column align-center">
+          <h2 className="successLoginHeader">You have succesfully loged in.</h2>
+          <Link to="/products">
+            <button className="successLoginBtn">Go back to Shoping</button>
+          </Link>
+
+          <img alt="Succes" src={SuccessForm} />
+        </div>
+      ) : (
+        <form className="form-card" onSubmit={handleSubmit(onSubmit)}>
+          <h2 className="form-header">Login</h2>
+          <input
+            className="email-input"
+            placeholder="Username"
+            type="text"
+            id="username"
+            {...register("username", {
+              required: "Username is required",
+            })}
+          ></input>
+          <p className="errorMsg">{errors.username?.message}</p>
+          <input
+            className="password-input"
+            placeholder="Password"
+            type="password"
+            id="password"
+            {...register("password", {
+              required: {
+                value: true,
+                message: "Password is required",
+              },
+            })}
+          ></input>
+          <p className="errorMsg">{errors.password?.message}</p>
+          <button className="form-submitBtn" type="submit">
+            Submit
+          </button>
+          <div>
+            <p className="form-passwordReset">Forgot your password? </p>
+            <Link to="/singUp">
+              <p className="form-passwordReset">Dont have an account?</p>
+            </Link>
+          </div>
+          <DevTool control={control} />
+        </form>
+      )}
     </div>
   );
 }

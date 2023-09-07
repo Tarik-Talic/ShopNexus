@@ -2,6 +2,7 @@ import React from "react";
 import "./Cart.css";
 import CartCard from "./CartCard";
 import { useCart } from "react-use-cart";
+import EmptyCart from "../../assets/undraw_empty_cart_co35.svg";
 function Cart() {
   const { items, isEmpty, cartTotal, emptyCart } = useCart();
   console.log(items);
@@ -9,7 +10,12 @@ function Cart() {
     <div className="flex-container">
       <div className="cart-container">
         <h2>Shoping Cart</h2>
-        {isEmpty && <h3>Cart is Empty</h3>}
+        {isEmpty && (
+          <>
+            <img className="emptyCart" src={EmptyCart} alt="Empty shoping cart" />
+            <h2>Your shopping cart is empty.</h2>
+          </>
+        )}
 
         {items.map((item) => {
           return (

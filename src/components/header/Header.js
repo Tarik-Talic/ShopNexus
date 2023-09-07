@@ -24,15 +24,14 @@ function Header() {
           </NavLink>
 
           <NavLink to="/shopping-cart" style={linkStyle}>
-            <FontAwesomeIcon icon={faCartShopping} />
+            <li>
+              <FontAwesomeIcon icon={faCartShopping} />
+            </li>
           </NavLink>
 
           <span className="nav__btns">
             <Link to="/login">
               <button className="nav__btns-login">Login</button>
-            </Link>
-            <Link to="/singUp">
-              <button className="nav__btns-singUp">SingUp</button>
             </Link>
           </span>
         </ul>

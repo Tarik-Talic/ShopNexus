@@ -20,7 +20,8 @@ li {
 }
 
 a.active > li {
-  border: 1px solid white;
+  color: orange;
+  border-bottom: 1px solid white;
   padding: 10px;
 }
 li > *:hover {
@@ -31,20 +32,19 @@ li > *:hover {
   display: flex;
   gap: 1rem;
 }
-.nav__btns-singUp {
-  background-color: #41b9fb;
-  color: white;
+.nav__btns-login {
+  background-color: #c5e8f7;
 }
-.nav__btns-login,
-.nav__btns-singUp {
+.nav__btns-login {
   font-size: 16px;
   border-radius: 24px;
   padding: 5px 20px;
   border: none;
   cursor: pointer;
 }
-.nav__btns-login:hover,
-.nav__btns-singUp:hover {
+.nav__btns-login:hover {
   scale: 1.2;
   transition: ease-out 0.3s;
+  background-color: #41b9fb;
+  color: white;
 }

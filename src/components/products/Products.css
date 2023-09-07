@@ -19,7 +19,7 @@
   color: #41b9fb;
   border-bottom: 1px solid #41b9fb;
 }
-.productCategories > *:active {
+.productCategories > *.active {
   color: #41b9fb;
   border-bottom: 1px solid #41b9fb;
 }

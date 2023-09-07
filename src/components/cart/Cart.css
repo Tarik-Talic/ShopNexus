@@ -4,6 +4,9 @@
   gap: 2rem;
   cursor: default;
 }
+.emptyCart {
+  width: 200px;
+}
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -11,6 +14,9 @@
 .flex-column {
   display: flex;
   flex-direction: column;
+}
+.align-center {
+  align-items: center;
 }
 .total-pricing {
   height: 300px;

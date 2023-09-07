@@ -1,12 +1,14 @@
-.login-container {
+.form-container {
   height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
-.login-card {
+
+.form-card {
   background-color: #c5e8f7;
-  height: 400px;
+  height: 550px;
   width: 300px;
   padding: 0 10px;
   border-radius: 24px;
@@ -14,25 +16,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1.5rem;
 }
-.login-header {
+
+.form-header {
   font-size: 30px;
   cursor: default;
 }
-.login-card > input {
+.form-card > input {
   width: 50%;
   outline: none;
   background-color: #c5e8f7;
   border: none;
   border-bottom: 1px solid black;
 }
-.login-card > input:focus {
+.form-card > input:focus {
   outline: none;
   border-bottom: 2px solid green;
 }
-.login-submitBtn {
-  font-size: 20px;
+.form-submitBtn {
+  font-size: 15px;
   padding: 10px 40px;
   border: none;
   border-radius: 30px;
@@ -40,16 +43,40 @@
   background-color: #11b5e4;
   cursor: pointer;
 }
-.login-submitBtn:hover {
+.form-submitBtn:hover {
   color: black;
   background-color: aqua;
 }
-.login-passwordReset {
+.form-passwordReset {
+  margin-top: 1rem;
   opacity: 0.5;
   cursor: pointer;
-  margin-top: 1rem;
 }
-.login-passwordReset:hover {
+.form-passwordReset:hover {
   color: blue;
   font-weight: bold;
+}
+.errorMsg {
+  margin-top: -20px;
+  font-size: 10px;
+  color: red;
+  cursor: default;
+}
+.successLoginHeader {
+  font-size: 30px;
+  color: whitesmoke;
+  cursor: default;
+}
+.successLoginBtn {
+  width: 150px;
+  padding: 10px 5px;
+  font-size: 15px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+}
+.successLoginBtn:hover {
+  background-color: #11b5e4;
+  color: white;
+  transition: all 300ms ease-in-out;
 }

@@ -7,7 +7,8 @@
 }
 
 .form-card {
-  background-color: #c5e8f7;
+  background-color: #2e424d;
+  color: white;
   height: 550px;
   width: 300px;
   padding: 0 10px;
@@ -51,9 +52,10 @@
   margin-top: 1rem;
   opacity: 0.5;
   cursor: pointer;
+  color: white;
 }
 .form-passwordReset:hover {
-  color: blue;
+  color: #98dad9;
   font-weight: bold;
 }
 .errorMsg {

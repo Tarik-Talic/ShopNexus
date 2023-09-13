@@ -33,3 +33,9 @@
 a.active > p {
   color: #41b9fb;
 }
+@media (max-width: 600px) {
+  .productCategories {
+    gap: 0.7rem;
+    font-size: 13px;
+  }
+}

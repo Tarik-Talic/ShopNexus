@@ -114,3 +114,25 @@
 .product-remove:hover {
   color: red;
 }
+@media (max-width: 600px) {
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cart-container {
+    width: 300px;
+  }
+  .product-container {
+    width: 200px;
+    gap: 1rem;
+    font-size: 12px;
+    margin-bottom: 0.5rem;
+  }
+  .productName {
+    width: 70px;
+  }
+  .total-pricing {
+    height: 200px;
+    margin-bottom: 2rem;
+  }
+}

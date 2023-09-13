@@ -10,7 +10,7 @@
 .heroContainer-text {
   padding: 0;
   margin: 0;
-  width: 500px;
+
   font-family: "Marko One", serif;
   font-size: 30px;
   text-align: center;
@@ -20,4 +20,17 @@
 h1 {
   padding: 0;
   margin: 0;
+}
+@media (max-width: 600px) {
+  .heroContainer {
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .heroContainer-text {
+    font-size: 20px;
+  }
+  .heroContainer-img {
+    width: 350px;
+    height: 300px;
+  }
 }

@@ -1,58 +1,57 @@
-import React, { useState } from "react";
-import "./ProductCard.css";
-import { useCart } from "react-use-cart";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import React, { useState } from 'react';
+import './ProductCard.css';
+import { useCart } from 'react-use-cart';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import ProductModal from './ProductModal';
 
 export default function ProductCard(props) {
-  const [showMore, setShowMore] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
+console.log(props);
   const { addItem } = useCart();
 
   const notifyCart = () => {
     addItem(props.item);
-    toast.success("Item added to cart.", {
-      position: "top-center",
+    toast.success('Item added to cart.', {
+      position: 'top-center',
       autoClose: 2000,
       hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "light",
+      theme: 'light',
     });
   };
   return (
-    <div>
-      <div className="card">
-        <div className="card-img">
+    <>
+      <div
+        className="card"
+        onClick={() => {
+          setModalOpen(true);
+        }}
+      >
+        <div
+          className="card-img"
+        >
           <img className="productImg" src={props.img} />
         </div>
-        <div className="card-title">{props.title.substring(0, 40)}</div>
-        <div className="card-subtitle">
-          {showMore ? props.description : `${props.description.substring(0, 100)}...`}
-        </div>
-        <button className="showMoreBtn" onClick={() => setShowMore(!showMore)}>
-          {showMore ? "Show Less..." : "Show More..."}
-        </button>
-
-        <div className="card-divider">
-          <div className="card-footer">
-            <div className="card-price">
-              <span>$</span> {props.price}
-            </div>
-            <button className="card-btn" onClick={notifyCart}>
-              <ToastContainer />
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path d="m397.78 316h-205.13a15 15 0 0 1 -14.65-11.67l-34.54-150.48a15 15 0 0 1 14.62-18.36h274.27a15 15 0 0 1 14.65 18.36l-34.6 150.48a15 15 0 0 1 -14.62 11.67zm-193.19-30h181.25l27.67-120.48h-236.6z"></path>
-                <path d="m222 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path>
-                <path d="m368.42 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path>
-                <path d="m158.08 165.49a15 15 0 0 1 -14.23-10.26l-25.71-77.23h-47.44a15 15 0 1 1 0-30h58.3a15 15 0 0 1 14.23 10.26l29.13 87.49a15 15 0 0 1 -14.23 19.74z"></path>
-              </svg>
-            </button>
-          </div>
-        </div>
+        <div className="product-name">{props.title}</div>
       </div>
-    </div>
+
+      {modalOpen && (
+        <ProductModal
+          item={props.item}
+          setOpenModal={setModalOpen}
+          img={props.img}
+          productName={props.title}
+          productDescription={props.description}
+          price={props.price}
+          rating={props.rating}
+          count={props.count}
+        />
+      )}
+    </>
   );
 }

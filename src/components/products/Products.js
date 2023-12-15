@@ -50,7 +50,12 @@ function Products() {
       </span>
       <Outlet />
 
-      <Category data={data} categoryName={categoryData} active={active} />
+      <Category
+        data={data}
+        categoryName={categoryData}
+        active={active}
+      />
+      
     </>
   );
 }

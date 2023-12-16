@@ -2,7 +2,6 @@ import React from 'react';
 import './ProductCard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
-import { FaStar } from 'react-icons/fa';
 import { useCart } from 'react-use-cart';
 import { ToastContainer, toast } from 'react-toastify';
 import { Rating } from 'react-simple-star-rating';

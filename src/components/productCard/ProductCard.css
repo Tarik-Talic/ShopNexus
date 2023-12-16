@@ -22,7 +22,7 @@
   margin-bottom: 3rem;
 }
 
-.product-name{
+.product-name {
   font-size: 17px;
   font-weight: 600;
 }
@@ -111,36 +111,61 @@
   padding: 10px;
   cursor: pointer;
 }
-.modal-cart:hover{
+.modal-cart:hover {
   background-color: #fff;
   color: #323232;
 }
+
+/* Pop Up animation  */
 .scale-in-center {
-	-webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @-webkit-keyframes scale-in-center {
   0% {
     -webkit-transform: scale(0);
-            transform: scale(0);
+    transform: scale(0);
     opacity: 1;
   }
   100% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
     opacity: 1;
   }
 }
 @keyframes scale-in-center {
   0% {
     -webkit-transform: scale(0);
-            transform: scale(0);
+    transform: scale(0);
     opacity: 1;
   }
   100% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
     opacity: 1;
+  }
+}
+@media (max-width: 600px) {
+  .modalContainer {
+    width: 95%;
+  }
+  .left-side {
+    font-size: 11px;
+  }
+  .modal-info > h2 {
+    font-size: 17px;
+  }
+  .modal-product-description {
+    padding: 0;
+    font-size: 10px;
+  }
+  .modal-price {
+    font-size: 20px;
+  }
+  .modal-product-image {
+    width: 140px;
+    height: 190px;
   }
 }

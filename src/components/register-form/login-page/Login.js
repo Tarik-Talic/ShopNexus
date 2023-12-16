@@ -76,7 +76,6 @@ function Login() {
               <p className="form-passwordReset">Dont have an account?</p>
             </Link>
           </div>
-          <DevTool control={control} />
         </form>
         </div>
         <div className='image-container'>

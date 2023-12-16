@@ -4,19 +4,4 @@
 nav {
   margin-bottom: 4rem;
 }
-/* @media all and (max-width: 600px) {
-  nav {
-    width: 100%;
-  }
-  .mainLogo {
-    width: 10px;
-    height: 10px;
-  }
-  .heroContainer-img {
-    width: 50px;
-    height: 50px;
-  }
-  .heroContainer-text {
-    font-size: 10px;
-  }
-} */
+

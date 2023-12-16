@@ -35,7 +35,7 @@
   align-items: center;
   gap: 1.5rem;
 }
-.singCard{
+.singCard {
   height: 90%;
 }
 .form-header {
@@ -99,4 +99,20 @@
   background-color: #11b5e4;
   color: white;
   transition: all 300ms ease-in-out;
+}
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+  .form-card {
+    padding: 10px 0;
+    height: 100%;
+  }
+  .form-card > input {
+    width: 100%;
+  }
+  .image-container > img{
+height: 75%;
+
+  }
 }

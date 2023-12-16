@@ -1,13 +1,13 @@
-import React from "react";
-import "../Form.css";
-import { useState, useEffect } from "react";
-import SingUp from '../../../assets/Sign up-bro.png'
-import { useForm } from "react-hook-form";
-import { DevTool } from "@hookform/devtools";
+import React from 'react';
+import '../Form.css';
+import { useState, useEffect } from 'react';
+import SingUp from '../../../assets/Sign up-bro.png';
+import { useForm } from 'react-hook-form';
+import { DevTool } from '@hookform/devtools';
 function Register() {
   const [account, setAccount] = useState({
-    firstName: "",
-    password: "",
+    firstName: '',
+    password: '',
   });
   console.log(account);
   const form = useForm();
@@ -20,7 +20,7 @@ function Register() {
         password: data.password,
       };
     });
-    console.log("form Submitted", data);
+    console.log('form Submitted', data);
   };
   useEffect(() => {
     if (isSubmitSuccessful) {
@@ -32,7 +32,10 @@ function Register() {
       <div className="form-container ">
         <div className="container">
           <div className="input-container">
-            <form className="form-card singCard" onSubmit={handleSubmit(onSubmit)}>
+            <form
+              className="form-card singCard"
+              onSubmit={handleSubmit(onSubmit)}
+            >
               <h2 className="form-header">Register</h2>
               <input
                 className="name-input"
@@ -99,8 +102,6 @@ function Register() {
               <button className="form-submitBtn" type="submit">
                 Submit
               </button>
-
-              <DevTool control={control} />
             </form>
           </div>
           <div className="image-container">

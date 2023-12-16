@@ -2,8 +2,10 @@ import React from 'react';
 import './ProductCard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
+import { FaStar } from 'react-icons/fa';
 import { useCart } from 'react-use-cart';
 import { ToastContainer, toast } from 'react-toastify';
+import { Rating } from 'react-simple-star-rating';
 import 'react-toastify/dist/ReactToastify.css';
 function ProductModal(props) {
   const { addItem } = useCart();
@@ -22,13 +24,23 @@ function ProductModal(props) {
     });
   };
   return (
-    <div className="modalBackground flex">
-      <div className="modalContainer flex">
+    <div className="modalBackground flex ">
+      <div className="modalContainer flex scale-in-center">
         <div className="flex left-side">
           <div className="modal-info flex">
             <h2>{props.productName}</h2>
             <span className="modal-rating flex">
-              <p>Product rating: {props.rating} </p>
+              <p>
+                Product rating:{' '}
+                <Rating
+                  initialValue={props.rating}
+                  size={15}
+                  fillColor="white"
+                  emptyColor="grey"
+                  readonly={true}
+                  allowFraction={true}
+                />
+              </p>
               <p>Reviews: {props.count}+</p>
             </span>
             <p className="modal-product-description">

@@ -31,7 +31,7 @@ function Cart() {
       </div>
       <div className="total-pricing flex-column">
         <h2>Total Price </h2>
-        <span className="total-pricing-summit">US {cartTotal}$</span>
+        <span className="total-pricing-summit">US {Math.round(cartTotal)}$</span>
         <button className="pricingBtn" onClick={() => emptyCart()}>
           Clear Cart
         </button>

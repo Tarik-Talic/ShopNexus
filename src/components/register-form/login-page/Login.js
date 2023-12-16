@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from "react";
-import "../Form.css";
-import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import { DevTool } from "@hookform/devtools";
-import SuccessForm from "../../../assets/Goal (1).gif";
+import React, { useEffect, useState } from 'react';
+import '../Form.css';
+import { Link } from 'react-router-dom';
+import Register from '../register-page/Register'
+import { useForm } from 'react-hook-form';
+import { DevTool } from '@hookform/devtools';
+import SuccessForm from '../../../assets/Goal (1).gif';
+import LoginForm from '../../../assets/Computer login-rafiki.png'
 
 function Login() {
   const [account, setAccount] = useState({
-    firstName: "",
-    password: "",
+    firstName: '',
+    password: '',
   });
-  console.log(account);
   const form = useForm();
   const { register, control, handleSubmit, formState, reset } = form;
   const { errors, isSubmitSuccessful } = formState;
@@ -21,7 +22,6 @@ function Login() {
         password: data.password,
       };
     });
-    console.log("form Submitted", data);
   };
   useEffect(() => {
     if (isSubmitSuccessful) {
@@ -30,7 +30,7 @@ function Login() {
   }, [isSubmitSuccessful, reset]);
   return (
     <div className="form-container">
-      {account.firstName && account.password === "admin" ? (
+      {account.firstName && account.password === 'admin' ? (
         <div className="flex-column align-center">
           <h2 className="successLoginHeader">You have succesfully loged in.</h2>
           <Link to="/products">
@@ -40,6 +40,8 @@ function Login() {
           <img alt="Succes" src={SuccessForm} />
         </div>
       ) : (
+        <div className='container'>
+          <div className='input-container'>
         <form className="form-card" onSubmit={handleSubmit(onSubmit)}>
           <h2 className="form-header">Login</h2>
           <input
@@ -47,8 +49,8 @@ function Login() {
             placeholder="Username"
             type="text"
             id="username"
-            {...register("username", {
-              required: "Username is required",
+            {...register('username', {
+              required: 'Username is required',
             })}
           ></input>
           <p className="errorMsg">{errors.username?.message}</p>
@@ -57,10 +59,10 @@ function Login() {
             placeholder="Password"
             type="password"
             id="password"
-            {...register("password", {
+            {...register('password', {
               required: {
                 value: true,
-                message: "Password is required",
+                message: 'Password is required',
               },
             })}
           ></input>
@@ -76,6 +78,11 @@ function Login() {
           </div>
           <DevTool control={control} />
         </form>
+        </div>
+        <div className='image-container'>
+          <img src={LoginForm}/>
+        </div>
+        </div>
       )}
     </div>
   );

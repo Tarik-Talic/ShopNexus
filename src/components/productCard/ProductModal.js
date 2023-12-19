@@ -6,9 +6,10 @@ import { useCart } from 'react-use-cart';
 import { ToastContainer, toast } from 'react-toastify';
 import { Rating } from 'react-simple-star-rating';
 import 'react-toastify/dist/ReactToastify.css';
+import { useAuth0 } from '@auth0/auth0-react';
 function ProductModal(props) {
   const { addItem } = useCart();
-
+  const { isAuthenticated } = useAuth0();
   const notifyCart = () => {
     addItem(props.item);
     toast.success('Item added to cart.', {
@@ -52,11 +53,17 @@ function ProductModal(props) {
               <span>$</span>
             </div>
             <div className="cheeckout-container flex">
-              <div className="modal-cart" onClick={notifyCart}>
-                + Add to cart
-                <ToastContainer />
-              </div>
-              <div className="modal-cart">Buy Now</div>
+              {isAuthenticated ? (
+                <>
+                  <div className="modal-cart" onClick={notifyCart}>
+                    + Add to cart
+                    <ToastContainer />
+                  </div>
+                  <div className="modal-cart">Buy Now</div>
+                </>
+              ) : (
+                <p>Please Login to add items to cart.</p>
+              )}
             </div>
           </div>
         </div>

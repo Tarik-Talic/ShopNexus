@@ -10,8 +10,7 @@
 .heroContainer-text {
   padding: 0;
   margin: 0;
-
-  font-family: "Marko One", serif;
+  font-family: 'Marko One', serif;
   font-size: 30px;
   text-align: center;
   color: whitesmoke;
@@ -33,4 +32,7 @@ h1 {
     width: 350px;
     height: 300px;
   }
+}
+.test {
+  width: 100px;
 }

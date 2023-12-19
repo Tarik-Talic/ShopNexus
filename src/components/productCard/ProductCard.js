@@ -8,7 +8,6 @@ import ProductModal from './ProductModal';
 export default function ProductCard(props) {
   const [modalOpen, setModalOpen] = useState(false);
 
-console.log(props);
   const { addItem } = useCart();
 
   const notifyCart = () => {

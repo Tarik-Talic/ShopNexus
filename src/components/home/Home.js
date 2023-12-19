@@ -1,6 +1,6 @@
-import React from "react";
-import HeroImage from "../../assets/Ecommerce-HeroImage.png";
-import "./Home.css";
+import React from 'react';
+import HeroImage from '../../assets/Ecommerce-HeroImage.png';
+import './Home.css';
 
 function Home() {
   return (

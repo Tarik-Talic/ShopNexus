@@ -1,8 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./components/header/Header";
-import Login from "./components/register-form/login-page/Login";
-import Register from "./components/register-form/register-page/Register";
 import Home from "./components/home/Home";
 import Products from "./components/products/Products";
 import Category from "./components/products/Category";
@@ -17,8 +15,6 @@ function App() {
           <Route path="category/:categoryName" element={<Category />} />
         </Route>
         <Route path="/shopping-cart" element={<Cart />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/singUp" element={<Register />} />
       </Routes>
     </div>
   );

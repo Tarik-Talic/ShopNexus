@@ -7,13 +7,20 @@ const Profile = () => {
 
   return (
     isAuthenticated && (
-      <>
-        <span className="profile" onClick={() => setOpenProfile(!openProfile)}>
+      <div
+        onMouseOver={() => {
+          setOpenProfile(true);
+        }}
+        onMouseLeave={() => {
+          setOpenProfile(false);
+        }}
+      >
+        <span className="profile">
           <img className="profile-picture" src={user.picture} />
           <h4>{user.nickname}</h4>
         </span>
         {openProfile && <ProfileMenu />}
-      </>
+      </div>
     )
   );
 };

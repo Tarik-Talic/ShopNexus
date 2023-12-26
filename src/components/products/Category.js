@@ -3,28 +3,22 @@ import ProductCard from '../productCard/ProductCard';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import { InfinitySpin } from 'react-loader-spinner';
-
+import { useCategoryProductsData } from '../../hooks/useApiData';
 function Category(props) {
-  const fetchCategoryProducts = () => {
-    return axios.get(
-      `https://fakestoreapi.com/products/category/${props.categoryName}`
-    );
-  };
-
-  const { data: categoryProducts, isLoading } = useQuery(
-    [`category/${props.categoryName}`],
-    fetchCategoryProducts
+  const { data: categoryProducts, isLoading } = useCategoryProductsData(
+    props.categoryName
   );
+
   if (isLoading)
     return (
       <div className="loader">
         <InfinitySpin width="200" color="#41b9fb" />
       </div>
     );
-    
+
   const categoryProductsElements = categoryProducts
     ? categoryProducts.data.map((item) => {
-      console.log(item)
+        console.log(item);
         return (
           <ProductCard
             item={item}

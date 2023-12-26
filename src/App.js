@@ -1,10 +1,11 @@
-import { Route, Routes } from "react-router-dom";
-import "./App.css";
-import Header from "./components/header/Header";
-import Home from "./components/home/Home";
-import Products from "./components/products/Products";
-import Category from "./components/products/Category";
-import Cart from "./components/cart/Cart";
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import Header from './components/header/Header';
+import Home from './components/home/Home';
+import Products from './components/products/Products';
+import Category from './components/products/Category';
+import Cart from './components/cart/Cart';
+import ProfilePage from './components/profile-page/ProfilePage';
 function App() {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ function App() {
           <Route path="category/:categoryName" element={<Category />} />
         </Route>
         <Route path="/shopping-cart" element={<Cart />} />
+        <Route path="/profile-info" element={<ProfilePage />} />
       </Routes>
     </div>
   );

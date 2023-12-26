@@ -1,0 +1,101 @@
+.profilePage-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.profilePage-card {
+  padding: 20px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 300px;
+  width: 50%;
+  background-color: white;
+  border-radius: 25px;
+}
+.left-side-profile {
+  flex: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right-side-profile {
+  flex: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 5%;
+  height: 100%;
+}
+.right-side-profile > h2 {
+  cursor: default;
+}
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  position: relative;
+  gap: 3rem;
+}
+.info {
+  display: flex;
+  gap: 3rem;
+}
+.info-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 50%;
+  font-size: 20px;
+  gap: 20px;
+}
+.info-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 50%;
+}
+
+.profilePage-picture {
+  height: 200px;
+  border-radius: 60px;
+}
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+label {
+  color: #2e424d;
+  font-size: 10px;
+  align-self: flex-start;
+}
+.input {
+  border: none;
+  border-bottom: 2px solid #2e424d;
+  font-size: 15px;
+  text-align: center;
+  color: #504d4d;
+}
+.input:focus {
+  outline: none;
+  border-bottom: 2px solid #8bc6dd;
+}
+
+.update-btn {
+  align-self: center;
+  width: 80%;
+  font-size: 16px;
+  border-radius: 24px;
+  padding: 5px 20px;
+  border: none;
+  cursor: pointer;
+}
+.update-btn:hover {
+  scale: 1.1;
+  transition: ease-out 0.3s;
+  background-color: #98dad9;
+  color: white;
+}

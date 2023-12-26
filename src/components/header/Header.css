@@ -159,9 +159,7 @@ li > *:hover {
   width: 100%;
   left: 0;
 }
-.profile-link > a {
-  text-decoration: none;
-}
+
 /* Animation for profile menu */
 .slide-bottom {
   -webkit-animation: slide-bottom 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;

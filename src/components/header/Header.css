@@ -126,13 +126,14 @@ li > *:hover {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  top: 6%;
+  top: 8%;
   background-color: white;
   color: black;
   border-radius: 15px;
   box-shadow: 0px 13px 32px 10px rgba(0, 0, 0, 0.62);
   -webkit-box-shadow: 0px 13px 32px 10px rgba(0, 0, 0, 0.62);
   -moz-box-shadow: 0px 13px 32px 10px rgba(0, 0, 0, 0.62);
+  z-index: 999;
 }
 .profile-link {
   font-size: 18px;

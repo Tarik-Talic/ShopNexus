@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import "./Products.css";
+import React, { useState } from 'react';
+import './ProductPage.css';
 
-import { InfinitySpin } from "react-loader-spinner";
-import { Link, Outlet, NavLink } from "react-router-dom";
-import { useAllProductData, useCategoryData } from "../../hooks/useApiData";
-import Category from "./Category";
+import { InfinitySpin } from 'react-loader-spinner';
+import { Link, Outlet, NavLink } from 'react-router-dom';
+import { useAllProductData, useCategoryData } from '../../hooks/useApiData';
+import Category from '../../components/products/Category';
 
-function Products() {
+function ProductPage() {
   const [active, setActive] = useState(false);
   const [categoryData, setCategoryData] = useState(null);
   const linkStyle = {
-    textDecoration: "none",
-    color: "white",
+    textDecoration: 'none',
+    color: 'white',
   };
   const { isLoading, data } = useAllProductData();
   const { data: category } = useCategoryData();
@@ -50,14 +50,9 @@ function Products() {
       </span>
       <Outlet />
 
-      <Category
-        data={data}
-        categoryName={categoryData}
-        active={active}
-      />
-      
+      <Category data={data} categoryName={categoryData} active={active} />
     </>
   );
 }
 
-export default Products;
+export default ProductPage;

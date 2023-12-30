@@ -1,7 +1,5 @@
 import React from 'react';
 import ProductCard from '../productCard/ProductCard';
-import axios from 'axios';
-import { useQuery } from '@tanstack/react-query';
 import { InfinitySpin } from 'react-loader-spinner';
 import { useCategoryProductsData } from '../../hooks/useApiData';
 function Category(props) {
@@ -18,7 +16,6 @@ function Category(props) {
 
   const categoryProductsElements = categoryProducts
     ? categoryProducts.data.map((item) => {
-        console.log(item);
         return (
           <ProductCard
             item={item}

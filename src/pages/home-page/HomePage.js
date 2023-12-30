@@ -1,8 +1,8 @@
 import React from 'react';
 import HeroImage from '../../assets/Ecommerce-HeroImage.png';
-import './Home.css';
+import './HomePage.css';
 
-function Home() {
+function HomePage() {
   return (
     <div className="heroContainer">
       <img src={HeroImage} alt="heroImage" className="heroContainer-img" />
@@ -16,4 +16,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

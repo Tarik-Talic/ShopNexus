@@ -7,7 +7,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import { Rating } from 'react-simple-star-rating';
 import 'react-toastify/dist/ReactToastify.css';
 import { useAuth0 } from '@auth0/auth0-react';
+
+
 function ProductModal(props) {
+  
   const { addItem } = useCart();
   const { isAuthenticated } = useAuth0();
   const notifyCart = () => {
@@ -69,7 +72,11 @@ function ProductModal(props) {
         </div>
 
         <div className="flex right-side">
-          <img className="modal-product-image" src={props.img} />
+          <img
+            className="modal-product-image"
+            src={props.img}
+            alt={props.productName}
+          />
           <button
             className="closeModal"
             onClick={() => {

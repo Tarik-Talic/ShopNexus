@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductCard from '../productCard/ProductCard';
+import ProductCard from '../../components/card/product-card/ProductCard';
 import { InfinitySpin } from 'react-loader-spinner';
 import { useCategoryProductsData } from '../../hooks/useApiData';
 function Category(props) {

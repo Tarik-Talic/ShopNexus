@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
-import EditProfilePage from './EditProfilePage';
+import EditProfilePage from '../../components/forms/EditProfile';
 import './ProfilePage.css';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useFetchUser } from '../../hooks/useAuth0Api';
 import { InfinitySpin } from 'react-loader-spinner';
-import ProfileAvatar from './ProfileAvatar';
+import ProfileAvatar from '../../components/modals/ProfileAvatar';
 
 const ProfilePage = () => {
   const { user, isAuthenticated } = useAuth0();
   const userID = user?.sub;
-  const {
-    data: userData,
-    isLoading,
-    refetch,
-  } = useFetchUser(userID);
+  const { data: userData, isLoading, refetch } = useFetchUser(userID);
   const [avatarModule, setAvatarModule] = useState(false);
 
   const picture = userData?.data.user_metadata.picture

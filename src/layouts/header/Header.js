@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
-import {NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import '../header/Header.css';
-import Logo from '../../assets/Logo.png';
+import Logo from '../../assets/images/Logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import LoginButton from './LoginButton';
-import Profile from './Profile';
+import LoginButton from '../../components/button/LoginButton';
+import Profile from '../../components/header/Profile';
 
 function Header() {
   const linkStyle = {

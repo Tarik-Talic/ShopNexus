@@ -1,9 +1,10 @@
-import React from "react";
-import "./Cart.css";
-import CartCard from "./CartCard";
-import { useCart } from "react-use-cart";
-import EmptyCart from "../../assets/undraw_empty_cart_co35.svg";
-function Cart() {
+import React from 'react';
+import './CartPage.css';
+import CartCard from '../../components/card/cart-card/CartCard';
+import { useCart } from 'react-use-cart';
+import EmptyCart from '../../assets/images/undraw_empty_cart_co35.svg';
+
+function CartPage() {
   const { items, isEmpty, cartTotal, emptyCart } = useCart();
   console.log(items);
   return (
@@ -12,7 +13,11 @@ function Cart() {
         <h2>Shoping Cart</h2>
         {isEmpty && (
           <>
-            <img className="emptyCart" src={EmptyCart} alt="Empty shoping cart" />
+            <img
+              className="emptyCart"
+              src={EmptyCart}
+              alt="Empty shoping cart"
+            />
             <h2>Your shopping cart is empty.</h2>
           </>
         )}
@@ -31,7 +36,9 @@ function Cart() {
       </div>
       <div className="total-pricing flex-column">
         <h2>Total Price </h2>
-        <span className="total-pricing-summit">US {Math.round(cartTotal)}$</span>
+        <span className="total-pricing-summit">
+          US {Math.round(cartTotal)}$
+        </span>
         <button className="pricingBtn" onClick={() => emptyCart()}>
           Clear Cart
         </button>
@@ -40,4 +47,4 @@ function Cart() {
   );
 }
 
-export default Cart;
+export default CartPage;

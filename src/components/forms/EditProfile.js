@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProfilePage.css';
+// import './ProfilePage.css';
 import { useForm } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
 import { updateUser } from '../../hooks/useAuth0Api';
@@ -19,7 +19,7 @@ const EditProfilePage = ({ preloadData, avatarData }) => {
     username: user.preferred_username,
   };
 
-  const { refetch } =useFetchUser(userID);
+  const { refetch } = useFetchUser(userID);
 
   const form = useForm({
     defaultValues: initialValue,

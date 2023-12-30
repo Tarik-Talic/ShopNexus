@@ -1,5 +1,5 @@
 import React from 'react';
-import LogoutButton from './LogoutButton';
+import LogoutButton from '../button/LogoutButton';
 import { NavLink } from 'react-router-dom';
 import { FaUser } from 'react-icons/fa';
 import { FaShoppingCart } from 'react-icons/fa';
@@ -17,7 +17,9 @@ const ProfileMenu = () => {
         </p>
       </NavLink>
       <NavLink to="/shopping-cart" style={linkStyle}>
-        <p className="profile-link">Cart <FaShoppingCart/></p>
+        <p className="profile-link">
+          Cart <FaShoppingCart />
+        </p>
       </NavLink>
       <LogoutButton />
     </div>

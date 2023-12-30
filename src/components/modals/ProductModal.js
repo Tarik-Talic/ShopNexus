@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProductCard.css';
+// import './ProductCard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 import { useCart } from 'react-use-cart';
@@ -8,9 +8,7 @@ import { Rating } from 'react-simple-star-rating';
 import 'react-toastify/dist/ReactToastify.css';
 import { useAuth0 } from '@auth0/auth0-react';
 
-
 function ProductModal(props) {
-  
   const { addItem } = useCart();
   const { isAuthenticated } = useAuth0();
   const notifyCart = () => {

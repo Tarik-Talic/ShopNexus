@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ProductCard.css';
 import 'react-toastify/dist/ReactToastify.css';
-import ProductModal from './ProductModal';
+import ProductModal from '../../modals/ProductModal';
 
 export default function ProductCard(props) {
   const [modalOpen, setModalOpen] = useState(false);

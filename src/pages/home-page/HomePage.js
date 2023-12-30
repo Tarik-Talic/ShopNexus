@@ -1,5 +1,5 @@
 import React from 'react';
-import HeroImage from '../../assets/Ecommerce-HeroImage.png';
+import HeroImage from '../../assets/images/Ecommerce-HeroImage.png';
 import './HomePage.css';
 
 function HomePage() {

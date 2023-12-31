@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './ProfileAvatar.css';
 const ProfileAvatar = ({ avatar, avatarModule }) => {
   const avatars = [
     'https://api.dicebear.com/7.x/bottts/svg?seed=Felix',

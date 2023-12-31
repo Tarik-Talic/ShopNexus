@@ -114,6 +114,7 @@
 .product-remove:hover {
   color: red;
 }
+
 @media (max-width: 600px) {
   .flex-container {
     flex-direction: column;

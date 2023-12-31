@@ -1,8 +1,9 @@
 import React from 'react';
-import HeroImage from '../../assets/images/Ecommerce-HeroImage.png';
+import { HeroImage } from '../../assets';
 import './HomePage.css';
 
 function HomePage() {
+  
   return (
     <div className="heroContainer">
       <img src={HeroImage} alt="heroImage" className="heroContainer-img" />

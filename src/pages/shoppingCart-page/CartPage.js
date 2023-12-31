@@ -6,7 +6,7 @@ import EmptyCart from '../../assets/images/undraw_empty_cart_co35.svg';
 
 function CartPage() {
   const { items, isEmpty, cartTotal, emptyCart } = useCart();
-  console.log(items);
+  
   return (
     <div className="flex-container">
       <div className="cart-container">

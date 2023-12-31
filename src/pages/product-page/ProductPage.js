@@ -3,12 +3,14 @@ import './ProductPage.css';
 
 import { InfinitySpin } from 'react-loader-spinner';
 import { Link, Outlet, NavLink } from 'react-router-dom';
-import { useAllProductData, useCategoryData } from '../../hooks/useApiData';
+import { useAllProductData, useCategoryData } from '../../services/productsApi';
 import Category from '../../layouts/product-category/Category';
 
 function ProductPage() {
+  
   const [active, setActive] = useState(false);
   const [categoryData, setCategoryData] = useState(null);
+
   const linkStyle = {
     textDecoration: 'none',
     color: 'white',

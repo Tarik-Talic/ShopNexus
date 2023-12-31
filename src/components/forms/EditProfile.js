@@ -1,12 +1,15 @@
 import React from 'react';
-// import './ProfilePage.css';
+import './EditProfile.css';
 import { useForm } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
-import { updateUser } from '../../hooks/useAuth0Api';
+import {
+  useFetchUser,
+  updateUser,
+  sendAvatar,
+} from '../../services/useAuth0Api';
 import { useAuth0 } from '@auth0/auth0-react';
 import { ToastContainer, toast } from 'react-toastify';
-import { sendAvatar } from '../../hooks/useAuth0Api';
-import { useFetchUser } from '../../hooks/useAuth0Api';
+
 const EditProfilePage = ({ preloadData, avatarData }) => {
   const { user } = useAuth0();
   const userID = preloadData.user_id;

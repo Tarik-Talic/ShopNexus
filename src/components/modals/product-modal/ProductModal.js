@@ -1,5 +1,5 @@
 import React from 'react';
-// import './ProductCard.css';
+import './ProductModal.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 import { useCart } from 'react-use-cart';

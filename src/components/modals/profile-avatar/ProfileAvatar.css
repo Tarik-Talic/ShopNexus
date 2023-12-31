@@ -1,0 +1,13 @@
+.avatar-container {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #2e424d;
+  width: 100%;
+  height: 100%;
+}
+.avatar-choice {
+  border: 1px solid black;
+  background-color: #504d4d;
+  width: 32.5%;
+}

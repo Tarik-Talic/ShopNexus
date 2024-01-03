@@ -66,3 +66,13 @@ label {
   background-color: #98dad9;
   color: white;
 }
+@media (max-width: 600px) {
+  .info {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  label {
+    align-self: start;
+    margin-bottom: 10px;
+  }
+}

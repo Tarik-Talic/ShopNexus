@@ -58,7 +58,6 @@ function ProductModal(props) {
                 <>
                   <div className="modal-cart" onClick={notifyCart}>
                     + Add to cart
-                    <ToastContainer />
                   </div>
                   <div className="modal-cart">Buy Now</div>
                 </>
@@ -85,6 +84,7 @@ function ProductModal(props) {
           </button>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 }

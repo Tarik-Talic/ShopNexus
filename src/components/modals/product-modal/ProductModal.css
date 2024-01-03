@@ -62,8 +62,30 @@
   text-align: center;
 }
 
+.modal-checkout-container {
+  flex-direction: column;
+  align-items: center;
+  gap: 1.3rem;
+}
+.modal-price {
+  align-items: center;
+  font-size: 40px;
+  margin: 0;
+}
+
+.cheeckout-container {
+  width: 100%;
+  justify-content: space-around;
+}
 .modal-cart {
   border: 1px solid white;
+  border-radius: 15px;
+  padding: 10px;
+  cursor: pointer;
+}
+.modal-cart:hover {
+  background-color: #fff;
+  color: #323232;
 }
 /* Pop Up animation  */
 .scale-in-center {

@@ -6,7 +6,7 @@ ul {
   margin: 0;
   height: 4rem;
   gap: 2rem;
-  background-color: rgb(46, 66, 77, .5);
+  background-color: rgb(46, 66, 77, 0.5);
   color: aliceblue;
 }
 .mainLogo {
@@ -86,7 +86,7 @@ li > *:hover {
     display: block;
   }
   .nav__btns-login {
-    display: none;
+    margin-bottom: 10px;
   }
   .hamBars {
     display: block;
@@ -107,7 +107,8 @@ li > *:hover {
   border-radius: 15px;
   cursor: pointer;
 }
-.profile:hover {
+.profile:hover,
+profile:active {
   background-color: #08c3bb;
 }
 .profile > h4 {
@@ -185,5 +186,11 @@ li > *:hover {
   100% {
     -webkit-transform: translateY(0);
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-menu {
+    position: relative;
   }
 }

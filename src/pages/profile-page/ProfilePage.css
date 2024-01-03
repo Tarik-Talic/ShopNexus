@@ -36,4 +36,10 @@
   cursor: default;
 }
 
-
+@media (max-width: 600px) {
+  .profilePage-card {
+    flex-direction: column;
+    width: 80%;
+    height: fit-content;
+  }
+}

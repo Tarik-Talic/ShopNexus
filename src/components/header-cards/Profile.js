@@ -6,11 +6,12 @@ import { useFetchUser } from '../../services/useAuth0Api';
 const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
   const [openProfile, setOpenProfile] = useState(false);
+
   const userID = user?.sub;
   const { data: userData } = useFetchUser(userID);
   const userAvatar = userData?.data.user_metadata.picture;
   const userNicknname = userData?.data.nickname;
-  console.log(userNicknname);
+
   return (
     isAuthenticated && (
       <div

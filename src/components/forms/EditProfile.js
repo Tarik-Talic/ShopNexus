@@ -28,7 +28,6 @@ const EditProfilePage = ({ preloadData, avatarData }) => {
     defaultValues: initialValue,
   });
   const { register, control, handleSubmit, reset, formState } = form;
-  console.log('picture data:' + avatarData);
   const onSubmit = (data) => {
     updateUser(userID, data);
     sendAvatar(userID, avatarData);

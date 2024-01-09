@@ -3,6 +3,7 @@
   justify-content: center;
   gap: 2rem;
   cursor: default;
+  position: relative;
 }
 .emptyCart {
   width: 200px;
@@ -39,10 +40,16 @@
   border-radius: 10px;
   background-color: #41b9fb;
   color: white;
+  cursor: pointer;
 }
 .pricingBtn:hover {
   background-color: red;
   color: white;
+}
+.pricingBtn:disabled {
+  opacity: 0.4;
+  background-color: grey;
+  cursor: default;
 }
 .cart-container {
   display: flex;

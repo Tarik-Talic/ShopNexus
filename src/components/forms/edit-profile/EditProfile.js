@@ -6,7 +6,7 @@ import {
   useFetchUser,
   updateUser,
   sendAvatar,
-} from '../../services/useAuth0Api';
+} from '../../../services/useAuth0Api';
 import { useAuth0 } from '@auth0/auth0-react';
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -60,7 +60,7 @@ const EditProfilePage = ({ preloadData, avatarData }) => {
         <div className="info">
           <div className="info-1">
             <div className="flexColumn">
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">*Name</label>
               <input
                 className="input"
                 type="text"
@@ -70,7 +70,7 @@ const EditProfilePage = ({ preloadData, avatarData }) => {
             </div>
 
             <div className="flexColumn">
-              <label htmlFor="nickname">Nick name</label>
+              <label htmlFor="nickname">*Nick name</label>
               <input
                 className="input"
                 type="text"
@@ -81,7 +81,7 @@ const EditProfilePage = ({ preloadData, avatarData }) => {
           </div>
           <div className="info-2">
             <div className="flexColumn">
-              <label htmlFor="nickname">Given Name</label>
+              <label htmlFor="nickname">*Given Name</label>
               <input
                 className="input"
                 type="text"
@@ -90,7 +90,7 @@ const EditProfilePage = ({ preloadData, avatarData }) => {
               />
             </div>
             <div className="flexColumn">
-              <label htmlFor="family_name">Family Name</label>
+              <label htmlFor="family_name">*Family Name</label>
               <input
                 className="input"
                 type="text"
@@ -100,7 +100,7 @@ const EditProfilePage = ({ preloadData, avatarData }) => {
             </div>
           </div>
         </div>
-        <button className="update-btn">Update Profile</button>
+        <button className="update-btn">*Update Profile</button>
         <ToastContainer />
       </form>
       <DevTool control={control} />

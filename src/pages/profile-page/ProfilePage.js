@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import EditProfilePage from '../../components/forms/EditProfile';
+import EditProfilePage from '../../components/forms/edit-profile/EditProfile';
 import './ProfilePage.css';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useFetchUser } from '../../services/useAuth0Api';

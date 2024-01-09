@@ -3,7 +3,9 @@ import LogoutButton from '../button/LogoutButton';
 import { NavLink } from 'react-router-dom';
 import { FaUser } from 'react-icons/fa';
 import { FaShoppingCart } from 'react-icons/fa';
+import { useCart } from 'react-use-cart';
 const ProfileMenu = () => {
+  const { totalItems } = useCart();
   const linkStyle = {
     textDecoration: 'none',
     color: 'black',
@@ -19,6 +21,7 @@ const ProfileMenu = () => {
       <NavLink to="/shopping-cart" style={linkStyle}>
         <p className="profile-link">
           Cart <FaShoppingCart />
+          {totalItems}
         </p>
       </NavLink>
       <LogoutButton />

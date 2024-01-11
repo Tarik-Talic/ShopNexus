@@ -27,7 +27,7 @@ root.render(
           <BrowserRouter>
             <App />
           </BrowserRouter>
-          <ReactQueryDevtools />
+          {/* <ReactQueryDevtools /> */}
         </QueryClientProvider>
       </CartProvider>
     </Auth0Provider>

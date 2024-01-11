@@ -12,10 +12,12 @@
   width: 100%;
   backdrop-filter: blur(10px);
 }
+
 .checkout-card {
   width: 75%;
   height: 80dvh;
 }
+
 .payment-methods {
   flex: 50%;
   flex-direction: column;
@@ -23,18 +25,22 @@
   background-color: #2c303a;
   color: white;
 }
+
 .succes-paymentContainer {
   flex-direction: column;
   align-items: center;
   margin-top: 10rem;
 }
-.succes-paymentContainer > h1 {
+
+.succes-paymentContainer>h1 {
   font-size: 34px;
 }
-.succes-paymentContainer > p {
+
+.succes-paymentContainer>p {
   opacity: 0.5;
 }
-.succes-paymentContainer > button {
+
+.succes-paymentContainer>button {
   padding: 5px 50px;
   font-size: 18px;
   background-color: #58177c;
@@ -45,6 +51,7 @@
   height: 100px;
   width: 100px;
 }
+
 .order-details {
   position: relative;
   flex: 20%;
@@ -56,19 +63,23 @@
   padding: 10px 15px;
   background-color: #6f92b2;
 }
-.order-details > h2,
+
+.order-details>h2,
 h3 {
   color: white;
 }
+
 .close-btn {
   position: absolute;
   top: 2%;
   right: 0;
 }
+
 .title {
   text-align: center;
   position: relative;
 }
+
 .title::after,
 .purchase-info::before {
   content: '';
@@ -78,6 +89,7 @@ h3 {
   width: 100%;
   background-color: black;
 }
+
 .products-container {
   gap: 10px;
   height: fit-content;
@@ -93,9 +105,11 @@ h3 {
   color: antiquewhite;
   width: 100%;
 }
-.purchase-info > * {
+
+.purchase-info>* {
   margin: 0;
 }
+
 .faded {
   color: rgba(245, 245, 245, 0.568);
 }

@@ -18,12 +18,6 @@ const ProfileMenu = () => {
           Profile <FaUser />
         </p>
       </NavLink>
-      <NavLink to="/shopping-cart" style={linkStyle}>
-        <p className="profile-link">
-          Cart <FaShoppingCart />
-          {totalItems}
-        </p>
-      </NavLink>
       <LogoutButton />
     </div>
   );

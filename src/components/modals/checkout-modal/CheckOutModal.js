@@ -4,6 +4,8 @@ import { useCart } from 'react-use-cart';
 import ChekcoutCard from '../../card/checkout-card/ChekcoutCard';
 import PaymentForm from '../../forms/payment/PaymentForm';
 import CompleteIcon from '../../../assets/images/icon-complete.svg';
+
+
 function CheckOutModal({ closeModal }) {
   const [succPayment, setSuccPayment] = useState(false);
   const { items, cartTotal, emptyCart, isEmpty } = useCart();

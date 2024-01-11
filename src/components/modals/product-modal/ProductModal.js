@@ -59,7 +59,6 @@ function ProductModal(props) {
                   <div className="modal-cart" onClick={notifyCart}>
                     + Add to cart
                   </div>
-                  <div className="modal-cart">Buy Now</div>
                 </>
               ) : (
                 <p>Please Login to add items to cart.</p>

@@ -6,12 +6,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import LoginButton from '../../components/button/LoginButton';
 import Profile from '../../components/header-cards/Profile';
+import { FaShoppingCart } from 'react-icons/fa';
+import { useCart } from 'react-use-cart';
 
 function Header() {
   const linkStyle = {
     textDecoration: 'none',
     color: 'white',
   };
+  const { totalItems } = useCart();
   const navRef = useRef();
   const showNavBar = () => {
     navRef.current.classList.toggle('responsive-nav');
@@ -30,6 +33,12 @@ function Header() {
             <li> Products </li>
           </NavLink>
 
+          <NavLink to="/shopping-cart" style={linkStyle}>
+            <li>
+              <FaShoppingCart />
+              {totalItems}
+            </li>
+          </NavLink>
           <span className="profile-container">
             <LoginButton />
             <Profile />

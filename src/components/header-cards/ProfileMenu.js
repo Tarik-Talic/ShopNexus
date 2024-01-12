@@ -1,11 +1,8 @@
 import React from 'react';
-import LogoutButton from '../button/LogoutButton';
+import { LogoutButton } from '../';
 import { NavLink } from 'react-router-dom';
 import { FaUser } from 'react-icons/fa';
-import { FaShoppingCart } from 'react-icons/fa';
-import { useCart } from 'react-use-cart';
 const ProfileMenu = () => {
-  const { totalItems } = useCart();
   const linkStyle = {
     textDecoration: 'none',
     color: 'black',

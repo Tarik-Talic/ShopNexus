@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../header/Header.css';
-import Logo from '../../assets/images/Logo.png';
+import { Logo } from '../../assets';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import LoginButton from '../../components/button/LoginButton';
+import { LoginButton } from '../../components';
 import Profile from '../../components/header-cards/Profile';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useCart } from 'react-use-cart';

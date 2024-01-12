@@ -5,20 +5,25 @@
   cursor: default;
   position: relative;
 }
+
 .emptyCart {
   width: 200px;
 }
+
 .flex-row {
   display: flex;
   flex-direction: row;
 }
+
 .flex-column {
   display: flex;
   flex-direction: column;
 }
+
 .align-center {
   align-items: center;
 }
+
 .total-pricing {
   height: 300px;
   width: 200px;
@@ -30,10 +35,12 @@
   border: 1px solid black;
   gap: 2rem;
 }
+
 .total-pricing-summit {
   font-size: 24px;
   font-weight: bold;
 }
+
 .pricingBtn {
   width: 8rem;
   padding: 5px 0;
@@ -42,15 +49,18 @@
   color: white;
   cursor: pointer;
 }
+
 .pricingBtn:hover {
   background-color: red;
   color: white;
 }
+
 .pricingBtn:disabled {
   opacity: 0.4;
-  background-color: grey;
+  background-color: var(--clr-neutral-900);
   cursor: default;
 }
+
 .cart-container {
   display: flex;
   flex-direction: column;
@@ -80,11 +90,13 @@
   width: 35rem;
   cursor: default;
 }
+
 .productImg {
   width: 100px;
   height: 90px;
   margin-left: 1rem;
 }
+
 .productQuantiy-container {
   display: flex;
   gap: 5px;
@@ -92,6 +104,7 @@
   align-items: baseline;
   justify-content: center;
 }
+
 .productQuantity {
   text-align: center;
   font-size: 10px;
@@ -105,12 +118,14 @@
 .productName {
   width: 300px;
 }
+
 .productPrice {
   position: absolute;
   right: 15px;
   bottom: 10px;
   font-weight: bold;
 }
+
 .product-remove {
   position: absolute;
   right: 5px;
@@ -118,6 +133,7 @@
   font-size: 20px;
   cursor: pointer;
 }
+
 .product-remove:hover {
   color: red;
 }
@@ -127,18 +143,22 @@
     flex-direction: column;
     align-items: center;
   }
+
   .cart-container {
     width: 300px;
   }
+
   .product-container {
     width: 200px;
     gap: 1rem;
     font-size: 12px;
     margin-bottom: 0.5rem;
   }
+
   .productName {
     width: 70px;
   }
+
   .total-pricing {
     height: 200px;
     margin-bottom: 2rem;

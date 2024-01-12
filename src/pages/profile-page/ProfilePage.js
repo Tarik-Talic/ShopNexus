@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import EditProfilePage from '../../components/forms/edit-profile/EditProfile';
+import { EditProfile, ProfileAvatar } from '../../components';
 import './ProfilePage.css';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useFetchUser } from '../../services/useAuth0Api';
 import { InfinitySpin } from 'react-loader-spinner';
-import ProfileAvatar from '../../components/modals/profile-avatar/ProfileAvatar';
 
 const ProfilePage = () => {
   const [avatarModule, setAvatarModule] = useState(false);
@@ -60,7 +59,7 @@ const ProfilePage = () => {
         <div className="right-side-profile">
           <h2>Profile Info</h2>
 
-          <EditProfilePage preloadData={userData.data} avatarData={avatar} />
+          <EditProfile preloadData={userData.data} avatarData={avatar} />
         </div>
       </div>
     </div>

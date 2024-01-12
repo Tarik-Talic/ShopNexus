@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import './PaymentForm.css';
 import { useForm } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
-import MaskedInput from 'react-text-mask';
-import cardLogo from '../../../assets/images/card-logo.svg';
+import { CardLogo } from '../../../assets';
 
 const PaymentForm = ({ totalPrice, emptyCart, setSuccPayment, closeModal }) => {
   const total = Math.round(totalPrice);
@@ -100,7 +99,7 @@ const PaymentForm = ({ totalPrice, emptyCart, setSuccPayment, closeModal }) => {
       <DevTool control={control} />
       <div className="credit-card">
         <div className="crd card-front ">
-          <img src={cardLogo} alt="Card Logo" className="card-frontLogo" />
+          <img src={CardLogo} alt="Card Logo" className="card-frontLogo" />
 
           <p className="card-frontName">{watch('cardName', 'Mr.Buyer')}</p>
           <p className="card-frontNum">

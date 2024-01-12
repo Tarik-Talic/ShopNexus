@@ -1,7 +1,8 @@
 import React from 'react';
-import ProductCard from '../../components/card/product-card/ProductCard';
+import { ProductCard } from '../../components';
 import { InfinitySpin } from 'react-loader-spinner';
 import { useCategoryProductsData } from '../../services/productsApi';
+
 function Category(props) {
   const { data: categoryProducts, isLoading } = useCategoryProductsData(
     props.categoryName

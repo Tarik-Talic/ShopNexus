@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './CartPage.css';
-import CartCard from '../../components/card/cart-card/CartCard';
+import { CartCard } from '../../components';
 import CheckoutModal from '../../components/modals/checkout-modal/CheckOutModal';
 import { useCart } from 'react-use-cart';
-import EmptyCart from '../../assets/images/undraw_empty_cart_co35.svg';
+import { EmptyCart } from '../../assets';
 
 function CartPage() {
   const [openCheckout, setOpenCheckout] = useState(false);

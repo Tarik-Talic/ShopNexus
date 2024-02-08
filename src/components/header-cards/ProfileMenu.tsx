@@ -1,5 +1,4 @@
-import React from 'react';
-import { LogoutButton } from '../';
+import { LogoutButton } from '..';
 import { NavLink } from 'react-router-dom';
 import { FaUser } from 'react-icons/fa';
 const ProfileMenu = () => {

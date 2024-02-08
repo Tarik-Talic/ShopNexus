@@ -15,7 +15,7 @@ function Header() {
     color: 'white',
   };
   const { totalItems } = useCart();
-  const navRef = useRef();
+  const navRef : any = useRef();
   const showNavBar = () => {
     navRef.current.classList.toggle('responsive-nav');
   };

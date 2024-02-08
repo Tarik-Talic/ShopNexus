@@ -1,12 +1,14 @@
-import React from 'react';
 import { ProductCard } from '../../components';
 import { InfinitySpin } from 'react-loader-spinner';
 import { useCategoryProductsData } from '../../services/productsApi';
-
-function Category(props) {
-  const { data: categoryProducts, isLoading } = useCategoryProductsData(
-    props.categoryName
-  );
+type CategoryProps = {
+  data: any;
+  categoryName: string | null;
+  active: boolean;
+};
+function Category({ data, categoryName, active }: CategoryProps) {
+  const { data: categoryProducts, isLoading } =
+    useCategoryProductsData(categoryName);
 
   if (isLoading)
     return (
@@ -16,11 +18,11 @@ function Category(props) {
     );
 
   const categoryProductsElements = categoryProducts
-    ? categoryProducts.data.map((item) => {
+    ? categoryProducts.data.map((item: any) => {
         return (
           <ProductCard
             item={item}
-            data={props.data.data}
+            data={data.data}
             key={item.id}
             title={item.title}
             description={item.description}
@@ -32,11 +34,11 @@ function Category(props) {
         );
       })
     : console.log('none');
-  const productsElemenets = props.data?.data.map((item) => {
+  const productsElemenets = data?.data.map((item: any) => {
     return (
       <ProductCard
         item={item}
-        data={props.data.data}
+        data={data.data}
         key={item.id}
         title={item.title}
         description={item.description}
@@ -50,7 +52,7 @@ function Category(props) {
 
   return (
     <div className="productContainer">
-      {props.active ? categoryProductsElements : productsElemenets}
+      {active ? categoryProductsElements : productsElemenets}
     </div>
   );
 }

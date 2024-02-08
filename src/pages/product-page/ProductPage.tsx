@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './ProductPage.css';
 
 import { InfinitySpin } from 'react-loader-spinner';
@@ -7,9 +7,8 @@ import { useAllProductData, useCategoryData } from '../../services/productsApi';
 import Category from '../../layouts/product-category/Category';
 
 function ProductPage() {
-  
   const [active, setActive] = useState(false);
-  const [categoryData, setCategoryData] = useState(null);
+  const [categoryData, setCategoryData] = useState<string | null>(null);
 
   const linkStyle = {
     textDecoration: 'none',
@@ -25,11 +24,11 @@ function ProductPage() {
       </div>
     );
 
-  function handleClick(categoryName) {
+  function handleClick(categoryName: string) {
     setCategoryData(categoryName);
     setActive(true);
   }
-  const categories = category?.data.map((item) => {
+  const categories = category?.data.map((item: any) => {
     return (
       <NavLink
         key={item}

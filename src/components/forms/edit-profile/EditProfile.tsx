@@ -10,16 +10,21 @@ import {
 import { useAuth0 } from '@auth0/auth0-react';
 import { ToastContainer, toast } from 'react-toastify';
 
-const EditProfilePage = ({ preloadData, avatarData }) => {
+type EditProfilePageProps = {
+  preloadData: any;
+  avatarData: any;
+};
+
+const EditProfilePage = ({ preloadData, avatarData }: EditProfilePageProps) => {
   const { user } = useAuth0();
   const userID = preloadData.user_id;
 
-  const initialValue = {
-    name: user.name,
+  const initialValue: {} = {
+    name: user?.name,
     nickname: preloadData.nickname,
-    family_name: user.family_name,
-    given_name: user.given_name,
-    username: user.preferred_username,
+    family_name: user?.family_name,
+    given_name: user?.given_name,
+    username: user?.preferred_username,
   };
 
   const { refetch } = useFetchUser(userID);
@@ -28,7 +33,7 @@ const EditProfilePage = ({ preloadData, avatarData }) => {
     defaultValues: initialValue,
   });
   const { register, control, handleSubmit, reset, formState } = form;
-  const onSubmit = (data) => {
+  const onSubmit = (data: any) => {
     updateUser(userID, data);
     sendAvatar(userID, avatarData);
   };

@@ -1,10 +1,16 @@
-import React from 'react';
-import { useCart } from 'react-use-cart';
+import { Item, useCart } from 'react-use-cart';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
-function CartCard(props) {
+
+type CardCardProps = {
+  productName: string;
+  price: number;
+  img: string;
+  item: any;
+};
+
+function CartCard({ productName, price, img, item }: CardCardProps) {
   const { updateItemQuantity, removeItem } = useCart();
-  const { productName, price, item, img } = props;
 
   return (
     <div className="product-container">
@@ -13,7 +19,9 @@ function CartCard(props) {
       <div className="product-descrption">
         <div className="productName">{productName}</div>
         <div className="productPricing">
-          <div className="productPrice">Total: US {price * item.quantity}$</div>
+          <div className="productPrice">
+            Total: US {price * item?.quantity}$
+          </div>
           <span className="productQuantiy-container flex-row">
             <button
               className="productQuantity qnty-incr"
@@ -32,7 +40,7 @@ function CartCard(props) {
         </div>
       </div>
       <FontAwesomeIcon
-        icon={faTrashCan}
+        icon="trash-can"
         className="product-remove"
         onClick={() => removeItem(item.id)}
       />

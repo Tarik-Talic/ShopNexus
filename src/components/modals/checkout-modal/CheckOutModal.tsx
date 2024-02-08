@@ -5,7 +5,10 @@ import ChekcoutCard from '../../card/checkout-card/ChekcoutCard';
 import PaymentForm from '../../forms/payment/PaymentForm';
 import { CompleteIcon } from '../../../assets';
 
-function CheckOutModal({ closeModal }) {
+type CheckOutModalProps = {
+  closeModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
+function CheckOutModal({ closeModal }: CheckOutModalProps) {
   const [succPayment, setSuccPayment] = useState(false);
   const { items, cartTotal, emptyCart, isEmpty } = useCart();
 

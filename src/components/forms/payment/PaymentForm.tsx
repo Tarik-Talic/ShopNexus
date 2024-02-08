@@ -4,17 +4,29 @@ import { useForm } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
 import { CardLogo } from '../../../assets';
 
-const PaymentForm = ({ totalPrice, emptyCart, setSuccPayment, closeModal }) => {
+type PaymentFormProps = {
+  totalPrice: number;
+  emptyCart: () => void;
+  setSuccPayment: React.Dispatch<React.SetStateAction<boolean>>;
+  closeModal: any;
+};
+
+const PaymentForm = ({
+  totalPrice,
+  emptyCart,
+  setSuccPayment,
+  closeModal,
+}: PaymentFormProps) => {
   const total = Math.round(totalPrice);
   const { register, watch, control, handleSubmit, reset, formState } =
     useForm();
   const { errors } = formState;
-  const handleInputChange = (e, num) => {
+  const handleInputChange = (e:any, num:number) => {
     const value = e.target.value;
     // Trim input to the first 3 characters
     e.target.value = value.slice(0, num);
   };
-  const submitPayment = (data) => {
+  const submitPayment = (data:any) => {
     console.log('Form Submitet', data);
     reset();
     emptyCart();
@@ -46,7 +58,7 @@ const PaymentForm = ({ totalPrice, emptyCart, setSuccPayment, closeModal }) => {
           type="number"
           inputMode="numeric"
           id="cardNum"
-          name="cardNum"
+          // name="cardNum"
           {...register('cardNum', {
             required: 'Card number is required!',
           })}
@@ -61,7 +73,7 @@ const PaymentForm = ({ totalPrice, emptyCart, setSuccPayment, closeModal }) => {
             className="cardInp"
             type="number"
             id="cardDateMM"
-            name="cardDateMM"
+            // name="cardDateMM"
             {...register('cardDateMM', {
               required: 'Month is required!',
             })}
@@ -72,7 +84,7 @@ const PaymentForm = ({ totalPrice, emptyCart, setSuccPayment, closeModal }) => {
             className="cardInp"
             type="number"
             id="cardDateYY"
-            name="cardDateYY"
+            // name="cardDateYY"
             {...register('cardDateYY', {
               required: 'Year is required!',
             })}
@@ -86,7 +98,7 @@ const PaymentForm = ({ totalPrice, emptyCart, setSuccPayment, closeModal }) => {
             className="cardInp"
             type="number"
             id="cardCVV"
-            name="cardCVV"
+            // name="cardCVV"
             maxLength={3}
             {...register('cardCVV', {
               required: 'Card CVV is required!',

@@ -26,7 +26,7 @@ const Profile = () => {
           <img
             className="profile-picture"
             src={userAvatar ? userAvatar : user?.picture}
-            alt={user.name}
+            alt={user?.name}
           />
           <h4>{userNicknname}</h4>
         </span>

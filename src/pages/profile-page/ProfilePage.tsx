@@ -32,18 +32,18 @@ const ProfilePage = () => {
             <img
               className="profilePage-picture"
               src={avatar}
-              alt={user.name}
+              alt={user?.name}
               onClick={() => setAvatarModule(true)}
             />
           ) : (
             <img
               className="profilePage-picture"
               src={
-                userData.data.user_metadata.picture
+                userData?.data.user_metadata.picture
                   ? userData.data.user_metadata.picture
-                  : user.picture
+                  : user?.picture
               }
-              alt={user.name}
+              alt={user?.name}
               onClick={() => setAvatarModule(true)}
             />
           )}
@@ -52,14 +52,14 @@ const ProfilePage = () => {
             <ProfileAvatar
               avatar={setAvatar}
               avatarModule={setAvatarModule}
-              refetch={refetch}
+              // refetch={refetch}
             />
           )}
         </div>
         <div className="right-side-profile">
           <h2>Profile Info</h2>
 
-          <EditProfile preloadData={userData.data} avatarData={avatar} />
+          <EditProfile preloadData={userData?.data} avatarData={avatar} />
         </div>
       </div>
     </div>

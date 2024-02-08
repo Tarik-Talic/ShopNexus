@@ -4,7 +4,7 @@ import axios from 'axios';
 const authBaseUrl = process.env.REACT_APP_AUTH0_DOMAIN;
 const apiToken = process.env.REACT_APP_AUTH0_TOKEN;
 
-const fetchUser = (userID) => {
+const fetchUser = (userID: string) => {
   return axios.get(`https://${authBaseUrl}/api/v2/users/${userID}`, {
     headers: {
       Authorization: `Bearer ${apiToken}`,
@@ -12,14 +12,14 @@ const fetchUser = (userID) => {
   });
 };
 
-export const useFetchUser = (userID) => {
+export const useFetchUser = (userID: string) => {
   return useQuery(['userInfo', userID], () => fetchUser(userID), {
     refetchOnMount: 'always',
     refetchOnWindowFocus: true,
   });
 };
 
-export const updateUser = (userID, data) => {
+export const updateUser = (userID: string, data: any) => {
   let config = {
     method: 'patch',
     maxBodyLength: Infinity,
@@ -41,7 +41,7 @@ export const updateUser = (userID, data) => {
     });
 };
 
-export const sendAvatar = (userID, avatar) => {
+export const sendAvatar = (userID: string, avatar: string) => {
   var options = {
     method: 'PATCH',
     url: `https://dev-lf68rvae2qj3j5a0.us.auth0.com/api/v2/users/${userID}`,

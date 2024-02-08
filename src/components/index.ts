@@ -1,19 +1,19 @@
 // Import for buttons
-import LoginButton from '../components/button/LoginButton';
-import LogoutButton from '../components/button/LogoutButton';
+import LoginButton from './button/LoginButton';
+import LogoutButton from './button/LogoutButton';
 
 //Imports for cards
-import CartCard from '../components/card/cart-card/CartCard';
-import CheckoutCard from '../components/card/checkout-card/ChekcoutCard';
-import ProductCard from '../components/card/product-card/ProductCard';
+import CartCard from './card/cart-card/CartCard';
+import CheckoutCard from './card/checkout-card/ChekcoutCard';
+import ProductCard from './card/product-card/ProductCard';
 
 //Import for forms
-import EditProfile from '../components/forms/edit-profile/EditProfile';
-import PaymentForm from '../components/forms/payment/PaymentForm';
+import EditProfile from './forms/edit-profile/EditProfile';
+import PaymentForm from './forms/payment/PaymentForm';
 
 //Imports for header cards
-import Profile from '../components/header-cards/Profile';
-import ProfileMenu from '../components/header-cards/ProfileMenu';
+import Profile from './header-cards/Profile';
+import ProfileMenu from './header-cards/ProfileMenu';
 
 //Imports for modals
 import CheckOutModal from './modals/checkout-modal/CheckOutModal';

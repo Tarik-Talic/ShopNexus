@@ -1,6 +1,11 @@
-import React from 'react';
 import './ProfileAvatar.css';
-const ProfileAvatar = ({ avatar, avatarModule }) => {
+
+type ProfileAvatarProps = {
+  avatar: React.Dispatch<any>;
+  avatarModule: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const ProfileAvatar = ({ avatar, avatarModule }: ProfileAvatarProps) => {
   const avatars = [
     'https://api.dicebear.com/7.x/bottts/svg?seed=Felix',
     'https://api.dicebear.com/7.x/bottts/svg?seed=Ponchi',
@@ -10,7 +15,7 @@ const ProfileAvatar = ({ avatar, avatarModule }) => {
     'https://api.dicebear.com/7.x/bottts/svg?seed=Dave',
   ];
 
-  const getUser = (avatarImg) => {
+  const getUser = (avatarImg: string) => {
     avatar(avatarImg);
     avatarModule(false);
   };

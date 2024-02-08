@@ -8,11 +8,31 @@ import { Rating } from 'react-simple-star-rating';
 import 'react-toastify/dist/ReactToastify.css';
 import { useAuth0 } from '@auth0/auth0-react';
 
-function ProductModal(props) {
+type ProductModalProps = {
+  item: any;
+  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
+  img: string;
+  productName: string;
+  productDescription: string;
+  price: number;
+  rating: number;
+  count: number;
+};
+
+function ProductModal({
+  item,
+  setOpenModal,
+  img,
+  productName,
+  productDescription,
+  price,
+  rating,
+  count,
+}: ProductModalProps) {
   const { addItem } = useCart();
   const { isAuthenticated } = useAuth0();
   const notifyCart = () => {
-    addItem(props.item);
+    addItem(item);
     toast.success('Item added to cart.', {
       position: 'top-center',
       autoClose: 2000,
@@ -29,12 +49,12 @@ function ProductModal(props) {
       <div className="modalContainer flex scale-in-center">
         <div className="flex left-side">
           <div className="modal-info flex">
-            <h2>{props.productName}</h2>
+            <h2>{productName}</h2>
             <span className="modal-rating flex">
               <p>
                 Product rating:{' '}
                 <Rating
-                  initialValue={props.rating}
+                  initialValue={rating}
                   size={15}
                   fillColor="white"
                   emptyColor="grey"
@@ -42,15 +62,13 @@ function ProductModal(props) {
                   allowFraction={true}
                 />
               </p>
-              <p>Reviews: {props.count}+</p>
+              <p>Reviews: {count}+</p>
             </span>
-            <p className="modal-product-description">
-              {props.productDescription}
-            </p>
+            <p className="modal-product-description">{productDescription}</p>
           </div>
           <div className="modal-checkout-container flex">
             <div className="modal-price">
-              {props.price}
+              {price}
               <span>$</span>
             </div>
             <div className="cheeckout-container flex">
@@ -68,15 +86,11 @@ function ProductModal(props) {
         </div>
 
         <div className="flex right-side">
-          <img
-            className="modal-product-image"
-            src={props.img}
-            alt={props.productName}
-          />
+          <img className="modal-product-image" src={img} alt={productName} />
           <button
             className="closeModal"
             onClick={() => {
-              props.setOpenModal(false);
+              setOpenModal(false);
             }}
           >
             <FontAwesomeIcon icon={faCircleXmark} size="2x" />

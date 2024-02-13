@@ -6,7 +6,7 @@ import { Rating } from 'react-simple-star-rating';
 import 'react-toastify/dist/ReactToastify.css';
 import { useAuth0 } from '@auth0/auth0-react';
 import { ProductContext } from '../../context/ProductContext';
-import { ProductData } from '../../types/Product.types';
+import { FaRegCircleXmark } from 'react-icons/fa6';
 
 type ProductModalProps = {
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -84,7 +84,7 @@ function ProductModal({ setOpenModal }: ProductModalProps) {
               setOpenModal(false);
             }}
           >
-            X{/* <FontAwesomeIcon icon={faCircleXmark} size="2x" /> */}
+            <FaRegCircleXmark size={20} />
           </button>
         </div>
       </div>

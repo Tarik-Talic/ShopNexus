@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './ProductPage.css';
 
 import { InfinitySpin } from 'react-loader-spinner';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Route, Routes } from 'react-router-dom';
 import {
   useAllProductData,
   useCategoryProductsData,
@@ -10,9 +10,8 @@ import {
 import CategoryNav from '../../components/navbar/CategoryNav';
 import ProductsContainer from '../../components/containers/ProductsContainer';
 
-
 function ProductPage() {
-  const [active, setActive] = useState(false);
+  const [allProductsDisplay, setAllProductsDisplay] = useState<boolean>(true);
   const [categoryData, setCategoryData] = useState<string | null>(null);
 
   const { isLoading, data: allProducts } = useAllProductData();
@@ -29,13 +28,16 @@ function ProductPage() {
 
   return (
     <>
-      <CategoryNav setActive={setActive} setCategoryData={setCategoryData} />
+      <CategoryNav
+        setAllProductDisplay={setAllProductsDisplay}
+        setCategoryData={setCategoryData}
+      />
       <Outlet />
 
-      {active ? (
-        <ProductsContainer data={categoryProducts?.data} />
-      ) : (
+      {allProductsDisplay ? (
         <ProductsContainer data={allProducts?.data} />
+      ) : (
+        <ProductsContainer data={categoryProducts?.data} />
       )}
     </>
   );

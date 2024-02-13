@@ -8,13 +8,14 @@ const fetchAllProducts = () => {
 const fetchCategory = () => {
   return axios.get(`https://fakestoreapi.com/products/categories`);
 };
-const fetchCategoryProducts = (categoryName:string) => {
+
+const fetchCategoryProducts = <T>(categoryName: T) => {
   return axios.get(
     `https://fakestoreapi.com/products/category/${categoryName}`
   );
 };
 
-export const useCategoryProductsData = (categoryName :string) => {
+export const useCategoryProductsData = <T>(categoryName: T) => {
   return useQuery(['userInfo', categoryName], () =>
     fetchCategoryProducts(categoryName)
   );

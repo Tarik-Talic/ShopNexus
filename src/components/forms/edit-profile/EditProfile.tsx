@@ -14,6 +14,21 @@ type EditProfilePageProps = {
   preloadData: any;
   avatarData: any;
 };
+type InitialValues = {
+  name: string;
+  nickname: string;
+  family_name: string;
+  given_name: string;
+  username: string;
+};
+type FormValues = {
+  name: string;
+  nickname: string;
+  family_name: string;
+  given_name: string;
+  username: string;
+  initialValue: InitialValues;
+};
 
 const EditProfilePage = ({ preloadData, avatarData }: EditProfilePageProps) => {
   const { user } = useAuth0();
@@ -29,7 +44,7 @@ const EditProfilePage = ({ preloadData, avatarData }: EditProfilePageProps) => {
 
   const { refetch } = useFetchUser(userID);
 
-  const form = useForm({
+  const form = useForm<FormValues>({
     defaultValues: initialValue,
   });
   const { register, control, handleSubmit, reset, formState } = form;

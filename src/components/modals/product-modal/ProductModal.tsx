@@ -1,38 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './ProductModal.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 import { useCart } from 'react-use-cart';
 import { ToastContainer, toast } from 'react-toastify';
 import { Rating } from 'react-simple-star-rating';
 import 'react-toastify/dist/ReactToastify.css';
 import { useAuth0 } from '@auth0/auth0-react';
+import { ProductContext } from '../../context/ProductContext';
+import { ProductData } from '../../types/Product.types';
 
 type ProductModalProps = {
-  item: any;
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
-  img: string;
-  productName: string;
-  productDescription: string;
-  price: number;
-  rating: number;
-  count: number;
 };
 
-function ProductModal({
-  item,
-  setOpenModal,
-  img,
-  productName,
-  productDescription,
-  price,
-  rating,
-  count,
-}: ProductModalProps) {
+function ProductModal({ setOpenModal }: ProductModalProps) {
+  const product = useContext(ProductContext);
   const { addItem } = useCart();
   const { isAuthenticated } = useAuth0();
+  console.log(product);
+
   const notifyCart = () => {
-    addItem(item);
+    addItem(product);
     toast.success('Item added to cart.', {
       position: 'top-center',
       autoClose: 2000,
@@ -49,12 +36,12 @@ function ProductModal({
       <div className="modalContainer flex scale-in-center">
         <div className="flex left-side">
           <div className="modal-info flex">
-            <h2>{productName}</h2>
+            <h2>{product?.title}</h2>
             <span className="modal-rating flex">
               <p>
                 Product rating:{' '}
                 <Rating
-                  initialValue={rating}
+                  initialValue={product?.rating.rate}
                   size={15}
                   fillColor="white"
                   emptyColor="grey"
@@ -62,13 +49,13 @@ function ProductModal({
                   allowFraction={true}
                 />
               </p>
-              <p>Reviews: {count}+</p>
+              <p>Reviews: {product?.rating.count}+</p>
             </span>
-            <p className="modal-product-description">{productDescription}</p>
+            <p className="modal-product-description">{product?.description}</p>
           </div>
           <div className="modal-checkout-container flex">
             <div className="modal-price">
-              {price}
+              {product?.price}
               <span>$</span>
             </div>
             <div className="cheeckout-container flex">
@@ -86,14 +73,18 @@ function ProductModal({
         </div>
 
         <div className="flex right-side">
-          <img className="modal-product-image" src={img} alt={productName} />
+          <img
+            className="modal-product-image"
+            src={product?.image}
+            alt={product?.title}
+          />
           <button
             className="closeModal"
             onClick={() => {
               setOpenModal(false);
             }}
           >
-            <FontAwesomeIcon icon={faCircleXmark} size="2x" />
+            X{/* <FontAwesomeIcon icon={faCircleXmark} size="2x" /> */}
           </button>
         </div>
       </div>

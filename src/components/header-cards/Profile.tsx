@@ -3,13 +3,13 @@ import { useAuth0 } from '@auth0/auth0-react';
 import ProfileMenu from './ProfileMenu';
 import { useFetchUser } from '../../services/useAuth0Api';
 
-const Profile = () => {
+export default function Profile() {
   const { user, isAuthenticated } = useAuth0();
   const [openProfile, setOpenProfile] = useState(false);
 
   const userID = user?.sub;
   const { data: userData } = useFetchUser(userID);
-  const userAvatar = userData?.data.user_metadata.picture;
+  const userAvatar = userData?.data.user_metadata?.picture;
   const userNicknname = userData?.data.nickname;
 
   return (
@@ -34,6 +34,4 @@ const Profile = () => {
       </div>
     )
   );
-};
-
-export default Profile;
+}

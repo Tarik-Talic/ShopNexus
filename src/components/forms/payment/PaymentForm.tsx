@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Ref, useState } from 'react';
 import './PaymentForm.css';
 import { useForm } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
@@ -11,22 +11,36 @@ type PaymentFormProps = {
   closeModal: any;
 };
 
-const PaymentForm = ({
+type FormValue = {
+  cardName: string;
+  cardNum: number;
+  cardDateMM: number;
+  cardDateYY: number;
+  cardCVV: number;
+};
+
+export default function PaymentForm({
   totalPrice,
   emptyCart,
   setSuccPayment,
   closeModal,
-}: PaymentFormProps) => {
+}: PaymentFormProps) {
   const total = Math.round(totalPrice);
-  const { register, watch, control, handleSubmit, reset, formState } =
-    useForm();
-  const { errors } = formState;
-  const handleInputChange = (e:any, num:number) => {
+  const {
+    register,
+    watch,
+    control,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormValue>();
+
+  const handleInputChange = (e: any, num: number) => {
     const value = e.target.value;
     // Trim input to the first 3 characters
     e.target.value = value.slice(0, num);
   };
-  const submitPayment = (data:any) => {
+  const submitPayment = (data: any) => {
     console.log('Form Submitet', data);
     reset();
     emptyCart();
@@ -44,9 +58,11 @@ const PaymentForm = ({
           placeholder="Mr.Buyer"
           type="text"
           id="cardName"
-          name="cardName"
           {...register('cardName', {
-            required: 'Name is required!',
+            required: {
+              value: true,
+              message: 'Name is required!',
+            },
           })}
         />
         <p className="errorMsg">{errors.cardName?.message}</p>
@@ -58,7 +74,6 @@ const PaymentForm = ({
           type="number"
           inputMode="numeric"
           id="cardNum"
-          // name="cardNum"
           {...register('cardNum', {
             required: 'Card number is required!',
           })}
@@ -114,17 +129,17 @@ const PaymentForm = ({
           <img src={CardLogo} alt="Card Logo" className="card-frontLogo" />
 
           <p className="card-frontName">{watch('cardName', 'Mr.Buyer')}</p>
-          <p className="card-frontNum">
-            {watch('cardNum', '0000-0000-0000-0000')}
-          </p>
+          <p className="card-frontNum">{watch('cardNum')}</p>
           <span className="card-frontExp">
-            <p>{watch('cardDateMM', 'MM')}</p>
+            {watch('cardNum')}
+            <p>{watch('cardDateMM')}</p>
             <p>/</p>
-            <p>{watch('cardDateYY', 'YY')}</p>
+            {watch('cardNum')}
+            <p>{watch('cardDateYY')}</p>
           </span>
         </div>
         <div className="crd card-back">
-          <p className="card-backCVV">{watch('cardCVV', '123')}</p>
+          <p className="card-backCVV">{watch('cardCVV')}</p>
         </div>
       </div>
       <span className="confirmContainer">
@@ -139,6 +154,4 @@ const PaymentForm = ({
       </span>
     </>
   );
-};
-
-export default PaymentForm;
+}

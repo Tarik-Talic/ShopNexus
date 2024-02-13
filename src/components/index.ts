@@ -1,11 +1,11 @@
 // Import for buttons
-import LoginButton from './button/LoginButton';
-import LogoutButton from './button/LogoutButton';
+import LoginButton from './buttons/LoginButton';
+import LogoutButton from './buttons/LogoutButton';
 
 //Imports for cards
-import CartCard from './card/cart-card/CartCard';
-import CheckoutCard from './card/checkout-card/ChekcoutCard';
-import ProductCard from './card/product-card/ProductCard';
+import CartCard from './cards/cart-card/CartCard';
+import CheckoutCard from './cards/checkout-card/ChekcoutCard';
+import ProductCard from './cards/product-card/ProductCard';
 
 //Import for forms
 import EditProfile from './forms/edit-profile/EditProfile';

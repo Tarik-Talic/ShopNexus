@@ -1,10 +1,8 @@
 .App {
   min-height: 100vh;
 }
-nav {
-  margin-bottom: 4rem;
-}
 
-:root{
---clr-neutral-900: hsl(278, 62%, 37%);
+
+:root {
+  --clr-neutral-900: hsl(278, 62%, 37%);
 }

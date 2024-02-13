@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './CheckOutModal.css';
 import { useCart } from 'react-use-cart';
-import ChekcoutCard from '../../card/checkout-card/ChekcoutCard';
+import ChekcoutCard from '../../cards/checkout-card/ChekcoutCard';
 import PaymentForm from '../../forms/payment/PaymentForm';
 import { CompleteIcon } from '../../../assets';
 

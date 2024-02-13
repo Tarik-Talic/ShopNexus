@@ -1,7 +1,8 @@
 import { LogoutButton } from '..';
 import { NavLink } from 'react-router-dom';
 import { FaUser } from 'react-icons/fa';
-const ProfileMenu = () => {
+
+export default function ProfileMenu() {
   const linkStyle = {
     textDecoration: 'none',
     color: 'black',
@@ -17,6 +18,4 @@ const ProfileMenu = () => {
       <LogoutButton />
     </div>
   );
-};
-
-export default ProfileMenu;
+}

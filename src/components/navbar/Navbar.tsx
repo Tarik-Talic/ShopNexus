@@ -5,25 +5,22 @@ import { useCart } from 'react-use-cart';
 type NavbarProps = {};
 
 export default function Navbar({}: NavbarProps) {
-  const linkStyle = {
-    textDecoration: 'none',
-    color: 'white',
-  };
   const { totalItems } = useCart();
   return (
     <nav>
-      <NavLink to="/" style={linkStyle}>
+      <NavLink to="/">
         <li> Home</li>
       </NavLink>
 
-      <NavLink to="/products" style={linkStyle}>
+      <NavLink to="/products">
         <li> Products </li>
       </NavLink>
 
-      <NavLink to="/shopping-cart" style={linkStyle}>
-        <li>
+      <NavLink to="/shopping-cart">
+        <li className="cartIcon">
+          {totalItems ? <p className="cartIcon-count">{totalItems}</p> : ''}
+
           <FaShoppingCart />
-          {totalItems}
         </li>
       </NavLink>
     </nav>

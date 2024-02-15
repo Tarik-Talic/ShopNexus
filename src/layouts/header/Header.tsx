@@ -20,9 +20,11 @@ function Header() {
         <img src={Logo} alt="LogoImage" className="mainLogo" />
         <Navbar />
         <ProfileContainer />
+        {/*For Mobile  */}
         <HamButton classname="hamBars" onClick={showNavBar}>
           <FiAlignCenter />
         </HamButton>
+        {/* ----------- */}
       </ul>
     </>
   );

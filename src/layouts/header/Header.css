@@ -1,3 +1,4 @@
+/*? Header bar */
 ul {
   list-style-type: none;
   display: flex;
@@ -7,10 +8,11 @@ ul {
   margin: 0;
   height: 4rem;
   gap: 2rem;
-  background-color: rgb(46, 66, 77, 0.5);
-  color: aliceblue;
+  background-color: var(--clr-accent-300);
+  color: var(--clr-neutral-100);
 }
 
+/*? Navigation  */
 nav {
   width: 100%;
   display: flex;
@@ -29,15 +31,44 @@ li {
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+  color: var(--clr-neutral-300);
+  font-family: var(--ff-secondary);
+}
+
+a:hover {
+  color: var(--clr-accent-100);
+}
+
 a.active>li {
-  color: #98dad9;
+  color: var(--clr-accent-100);
   border-bottom: 1px solid white;
   padding: 10px;
 }
 
-li>*:hover {
+li>a:hover {
   color: #08c3bb;
 }
+
+.cartIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.cartIcon-count {
+  right: 25%;
+  margin: 0;
+  padding: 0 2px;
+  font-size: 15px;
+  color: var(--clr-accent-500);
+  background-color: var(--clr-accent-100);
+  border-radius: 60px;
+}
+
+/*? Login and Logout Btn  */
 
 .nav__btns {
   display: flex;
@@ -68,64 +99,11 @@ li>*:hover {
   display: none;
 }
 
-.hamBars {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-}
-
+/*? Profile styling */
 .profile-container {
   margin-right: 2rem;
 }
 
-@media (max-width: 600px) {
-  nav {
-    width: 100%;
-  }
-
-  .responsive-nav>* {
-    display: block;
-  }
-
-  .responsive-nav {
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    height: 100%;
-    transition: ease-in;
-    transition-duration: 1s;
-  }
-
-  ul {
-    justify-content: space-evenly;
-  }
-
-  ul>* {
-    display: none;
-  }
-
-  .mainLogo {
-    height: 50px;
-    width: 150px;
-    margin-left: -50px;
-    display: block;
-  }
-
-  .nav__btns-login {
-    margin-bottom: 10px;
-  }
-
-  .hamBars {
-    display: block;
-    font-size: 20px;
-    position: absolute;
-    top: 15px;
-    right: 10px;
-  }
-}
-
-/* Profile styling */
 .profile {
   padding: 5px 10px;
   position: relative;
@@ -198,7 +176,7 @@ profile:active {
   left: 0;
 }
 
-/* Animation for profile menu */
+/* ?Animation for profile menu */
 .slide-bottom {
   -webkit-animation: slide-bottom 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: slide-bottom 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -227,6 +205,67 @@ profile:active {
     transform: translateY(0);
   }
 }
+
+/*? Hamburger btn for mobile */
+.hamBars {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+}
+
+
+
+
+/*? Mobile responsiveness  */
+@media (max-width: 600px) {
+  nav {
+    width: 100%;
+  }
+
+  .responsive-nav>* {
+    display: block;
+  }
+
+  .responsive-nav {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    height: 100%;
+    transition: ease-in;
+    transition-duration: 1s;
+  }
+
+  ul {
+    justify-content: space-evenly;
+  }
+
+  ul>* {
+    display: none;
+  }
+
+  .mainLogo {
+    height: 50px;
+    width: 150px;
+    margin-left: -50px;
+    display: block;
+  }
+
+  .nav__btns-login {
+    margin-bottom: 10px;
+  }
+
+  .hamBars {
+    display: block;
+    font-size: 20px;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+  }
+}
+
+
+
 
 @media (max-width: 600px) {
   .profile-menu {

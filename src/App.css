@@ -4,5 +4,27 @@
 
 
 :root {
-  --clr-neutral-900: hsl(278, 62%, 37%);
+  /*? Colors  */
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-300: hsl(270, 3%, 87%);
+  --clr-neutral-500: hsl(279, 6%, 55%);
+  --clr-neutral-900: hsl(278, 68%, 11%);
+
+
+  --clr-accent-100: hsl(179, 47%, 73%);
+  --clr-accent-200: hsl(181, 39%, 45%);
+  --clr-accent-300: hsl(195, 71%, 31%);
+  --clr-accent-500: hsl(197, 88%, 17%);
+
+  /*? Fonts   */
+
+  /* Fonts Family  */
+  --ff-primary: "Bruno Ace SC",
+    sans-serif;
+  --ff-secondary: "Orbitron",
+    sans-serif;
+  /* Fonts Weights  */
+  --fw-regular: 400;
+
 }

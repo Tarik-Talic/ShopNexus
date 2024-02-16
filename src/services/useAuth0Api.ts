@@ -4,8 +4,8 @@ import axios from 'axios';
 const authBaseUrl = process.env.REACT_APP_AUTH0_DOMAIN;
 const apiToken = process.env.REACT_APP_AUTH0_TOKEN;
 
-const fetchUser = <T>(userID: T) => {
-  return axios.get(`https://${authBaseUrl}/api/v2/users/${userID}`, {
+const fetchUser = async <T>(userID: T) => {
+  return await axios.get(`https://${authBaseUrl}/api/v2/users/${userID}`, {
     headers: {
       Authorization: `Bearer ${apiToken}`,
     },

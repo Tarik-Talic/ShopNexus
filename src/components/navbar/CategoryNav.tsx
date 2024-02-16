@@ -30,7 +30,7 @@ export default function CategoryNav({
     );
   });
   return (
-    <nav className="productCategories">
+    <nav className="productNavigation">
       <Link to={'/products'}>
         <p onClick={() => setAllProductDisplay(true)}>All</p>
       </Link>

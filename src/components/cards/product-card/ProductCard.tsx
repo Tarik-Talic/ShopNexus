@@ -3,6 +3,8 @@ import './ProductCard.css';
 import 'react-toastify/dist/ReactToastify.css';
 import ProductModal from '../../modals/product-modal/ProductModal';
 import { ProductContext } from '../../context/ProductContext';
+import ProductTittle from '../../headings/ProductTittle';
+import ImageContainer from '../../containers/ImageContainer';
 
 export default function ProductCard() {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
@@ -17,14 +19,15 @@ export default function ProductCard() {
           setModalOpen(true);
         }}
       >
-        <div className="card-img">
+        <ImageContainer classname="card-img">
           <img
             className="productImg"
             src={product?.image}
             alt={product?.title}
           />
-        </div>
-        <div className="product-name">{product?.title}</div>
+        </ImageContainer>
+
+        <ProductTittle classname="product-name">{product?.title}</ProductTittle>
       </div>
 
       {modalOpen && <ProductModal setOpenModal={setModalOpen} />}

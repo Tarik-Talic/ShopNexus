@@ -11,11 +11,15 @@
   --clr-neutral-500: hsl(279, 6%, 55%);
   --clr-neutral-900: hsl(278, 68%, 11%);
 
-
   --clr-accent-100: hsl(179, 47%, 73%);
   --clr-accent-200: hsl(181, 39%, 45%);
   --clr-accent-300: hsl(195, 71%, 31%);
   --clr-accent-500: hsl(197, 88%, 17%);
+  --clr-accent-600: hsl(192, 89%, 11%);
+
+  --clr-accent-active: hsl(201, 96%, 62%);
+
+
 
   /*? Fonts   */
 
@@ -26,5 +30,17 @@
     sans-serif;
   /* Fonts Weights  */
   --fw-regular: 400;
+  --fw-bold: 600;
+  /* Font  Sizes */
+  /*? Sizes */
+  --size-100: 0.50rem;
+  --size-200: 1rem;
+  --size-300: 1.50rem;
+  --size-400: 2rem;
+  --size-500: 2.5rem;
+  --size-600: 3rem;
+  --size-700: 3.50rem;
+  --size-800: 4rem;
+  --size-900: 5rem;
 
 }

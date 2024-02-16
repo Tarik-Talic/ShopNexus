@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useAuth0 } from '@auth0/auth0-react';
 import { ProductContext } from '../../context/ProductContext';
 import { FaRegCircleXmark } from 'react-icons/fa6';
+import ProductTittle from '../../headings/ProductTittle';
 
 type ProductModalProps = {
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -36,14 +37,16 @@ function ProductModal({ setOpenModal }: ProductModalProps) {
       <div className="modalContainer flex scale-in-center">
         <div className="flex left-side">
           <div className="modal-info flex">
-            <h2>{product?.title}</h2>
+            <ProductTittle as={'h2'} classname="product-tittle">
+              {product?.title}
+            </ProductTittle>
             <span className="modal-rating flex">
               <p>
                 Product rating:{' '}
                 <Rating
                   initialValue={product?.rating.rate}
                   size={15}
-                  fillColor="white"
+                  fillColor="#01c38e"
                   emptyColor="grey"
                   readonly={true}
                   allowFraction={true}

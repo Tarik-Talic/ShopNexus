@@ -9,7 +9,7 @@ const ProfilePage = () => {
   const [avatarModule, setAvatarModule] = useState(false);
   const { user } = useAuth0();
   const userID = user?.sub;
-  const { data: userData, isLoading, refetch } = useFetchUser(userID);
+  const { data: userData, isLoading } = useFetchUser(userID);
 
   const picture = userData?.data.user_metadata.picture
     ? userData?.data.user_metadata.picture

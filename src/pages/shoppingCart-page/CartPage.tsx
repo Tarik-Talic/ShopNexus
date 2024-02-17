@@ -4,6 +4,8 @@ import { CartCard } from '../../components';
 import CheckoutModal from '../../components/modals/checkout-modal/CheckOutModal';
 import { useCart } from 'react-use-cart';
 import { EmptyCart } from '../../assets';
+import SubHeading from '../../components/headings/SubHeading';
+import Button from '../../components/buttons/Button';
 
 function CartPage() {
   const [openCheckout, setOpenCheckout] = useState(false);
@@ -11,7 +13,8 @@ function CartPage() {
   return (
     <div className="flex-container">
       <div className="cart-container">
-        <h2>Shoping Cart</h2>
+        {!isEmpty && <SubHeading>ITEMS IN YOUR CART</SubHeading>}
+
         {isEmpty && (
           <>
             <img
@@ -40,16 +43,17 @@ function CartPage() {
         <span className="total-pricing-summit">
           Total price: US {Math.round(cartTotal)}$
         </span>
-        <button
-          className="pricingBtn"
+        <Button
+          classname="pricingBtn checkOutBtn"
           disabled={isEmpty}
           onClick={() => setOpenCheckout(true)}
         >
           Checkout
-        </button>
-        <button className="pricingBtn" onClick={() => emptyCart()}>
+        </Button>
+
+        <Button classname="pricingBtn clearBtn" onClick={() => emptyCart()}>
           Clear Cart
-        </button>
+        </Button>
       </div>
       {openCheckout && <CheckoutModal closeModal={setOpenCheckout} />}
     </div>

@@ -4,6 +4,7 @@
   gap: 2rem;
   cursor: default;
   position: relative;
+  margin-top: 3rem;
 }
 
 .emptyCart {
@@ -31,9 +32,10 @@
   text-align: center;
   align-items: center;
   position: sticky;
-  background-color: #f5f5f5;
-  border: 1px solid black;
+  background-color: #009068;
   gap: 2rem;
+  font-family: var(--ff-primary);
+  color: var(--clr-neutral-100);
 }
 
 .total-pricing-summit {
@@ -45,14 +47,17 @@
   width: 8rem;
   padding: 5px 0;
   border-radius: 10px;
-  background-color: #41b9fb;
-  color: white;
+  background-color: var(--clr-accent-300);
+  color: var(--clr-neutral-100);
   cursor: pointer;
 }
 
-.pricingBtn:hover {
-  background-color: red;
-  color: white;
+.checkOutBtn:hover {
+  background-color: var(--clr-accent-active);
+}
+
+.clearBtn:hover {
+  background-color: red
 }
 
 .pricingBtn:disabled {
@@ -67,9 +72,15 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  background-color: #f5f5f5;
+  background-color: var(--clr-accent-300);
   width: 800px;
   padding: 2rem 0;
+  font-family: var(--ff-primary);
+
+}
+
+.cart-container>h2 {
+  color: var(--clr-neutral-100);
 }
 
 .cart-product {
@@ -79,6 +90,7 @@
   color: black;
 }
 
+
 .product-container {
   padding: 20px;
   display: flex;
@@ -86,6 +98,7 @@
   align-items: center;
   gap: 3rem;
   border: 1px solid black;
+  border-radius: 24px;
   background-color: white;
   width: 35rem;
   cursor: default;
@@ -96,6 +109,7 @@
   height: 90px;
   margin-left: 1rem;
 }
+
 
 .productQuantiy-container {
   display: flex;
@@ -113,6 +127,11 @@
   border: none;
   border-radius: 24px;
   cursor: pointer;
+
+}
+
+.productQuantity:hover {
+  color: var(--clr-accent-200);
 }
 
 .productName {
@@ -128,7 +147,7 @@
 
 .product-remove {
   position: absolute;
-  right: 5px;
+  right: 10px;
   top: 5px;
   font-size: 20px;
   cursor: pointer;

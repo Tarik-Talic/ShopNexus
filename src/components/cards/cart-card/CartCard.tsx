@@ -1,6 +1,7 @@
 import { Item, useCart } from 'react-use-cart';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
+import { BsTrash } from 'react-icons/bs';
+import { CiCircleMinus, CiCirclePlus } from 'react-icons/ci';
+import { FaPlusCircle, FaMinusCircle } from 'react-icons/fa';
 
 type CardCardProps = {
   productName: string;
@@ -14,36 +15,33 @@ function CartCard({ productName, price, img, item }: CardCardProps) {
 
   return (
     <div className="product-container">
-      <img className="productImg" alt="productImg" src={img} />
+      <div className="imgContainer">
+        <img className="productImg" alt="productImg" src={img} />
+      </div>
       <p>{price}$</p>
       <div className="product-descrption">
         <div className="productName">{productName}</div>
         <div className="productPricing">
           <div className="productPrice">
-            Total: US {price * item?.quantity}$
+            Total: US <i>{price * item?.quantity}$</i>
           </div>
+
           <span className="productQuantiy-container flex-row">
-            <button
+            <FaMinusCircle
               className="productQuantity qnty-incr"
               onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
-            >
-              -
-            </button>
+            />
+
             <p>{item.quantity}</p>
-            <button
+
+            <FaPlusCircle
               className="productQuantity qnty-decr"
               onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
-            >
-              +
-            </button>
+            />
           </span>
         </div>
       </div>
-      <FontAwesomeIcon
-        icon="trash-can"
-        className="product-remove"
-        onClick={() => removeItem(item.id)}
-      />
+      <BsTrash className="product-remove" onClick={() => removeItem(item.id)} />
     </div>
   );
 }

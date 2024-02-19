@@ -18,7 +18,7 @@ root.render(
       domain={domain}
       clientId={clientId}
       authorizationParams={{
-        redirect_uri: window.location.origin,
+        redirect_uri: 'https://tarik-talic.github.io/ShopNexus/',
       }}
     >
       <CartProvider>

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { CartProvider } from 'react-use-cart';
 import { Auth0Provider } from '@auth0/auth0-react';
@@ -23,9 +23,9 @@ root.render(
     >
       <CartProvider>
         <QueryClientProvider client={queryClient}>
-          <BrowserRouter>
+          <HashRouter>
             <App />
-          </BrowserRouter>
+          </HashRouter>
           {/* <ReactQueryDevtools /> */}
         </QueryClientProvider>
       </CartProvider>

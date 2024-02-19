@@ -13,7 +13,11 @@ const fetchUser = async <T>(userID: T) => {
 };
 
 export const useFetchUser = <T>(userID: T) => {
-  return useQuery(['userInfo', userID], () => fetchUser(userID));
+  return useQuery({
+    queryKey: ['userInfo', userID],
+    queryFn: () => fetchUser(userID),
+    enabled: false,
+  });
 };
 
 export const updateUser = <T>(userID: T, data: T[]) => {

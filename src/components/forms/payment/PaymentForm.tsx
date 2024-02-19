@@ -3,6 +3,7 @@ import './PaymentForm.css';
 import { useForm } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
 import { CardLogo } from '../../../assets';
+import Button from '../../buttons/Button';
 
 type PaymentFormProps = {
   totalPrice: number;
@@ -46,6 +47,7 @@ export default function PaymentForm({
     emptyCart();
     setSuccPayment(true);
   };
+
   return (
     <>
       <form
@@ -88,7 +90,6 @@ export default function PaymentForm({
             className="cardInp"
             type="number"
             id="cardDateMM"
-            // name="cardDateMM"
             {...register('cardDateMM', {
               required: 'Month is required!',
             })}
@@ -99,7 +100,6 @@ export default function PaymentForm({
             className="cardInp"
             type="number"
             id="cardDateYY"
-            // name="cardDateYY"
             {...register('cardDateYY', {
               required: 'Year is required!',
             })}
@@ -113,7 +113,6 @@ export default function PaymentForm({
             className="cardInp"
             type="number"
             id="cardCVV"
-            // name="cardCVV"
             maxLength={3}
             {...register('cardCVV', {
               required: 'Card CVV is required!',
@@ -129,12 +128,13 @@ export default function PaymentForm({
           <img src={CardLogo} alt="Card Logo" className="card-frontLogo" />
 
           <p className="card-frontName">{watch('cardName', 'Mr.Buyer')}</p>
+
           <p className="card-frontNum">{watch('cardNum')}</p>
+
           <span className="card-frontExp">
-            {watch('cardNum')}
             <p>{watch('cardDateMM')}</p>
             <p>/</p>
-            {watch('cardNum')}
+
             <p>{watch('cardDateYY')}</p>
           </span>
         </div>
@@ -143,14 +143,15 @@ export default function PaymentForm({
         </div>
       </div>
       <span className="confirmContainer">
-        <button onClick={handleSubmit(submitPayment)}>Pay {total}$</button>
-        <button
+        <Button onClick={handleSubmit(submitPayment)}> Pay {total}$</Button>
+
+        <Button
           onClick={() => {
             closeModal(false);
           }}
         >
           Cancel
-        </button>
+        </Button>
       </span>
     </>
   );

@@ -22,7 +22,7 @@ export default function CategoryNav({
     return (
       <>
         <NavLink key={item} to={`category/${item}`}>
-          <p key={item} onClick={() => handleClick(item)}>
+          <p onClick={() => handleClick(item)}>
             {item.charAt(0).toUpperCase() + item.slice(1)}
           </p>
         </NavLink>

@@ -17,7 +17,6 @@ function ProductModal({ setOpenModal }: ProductModalProps) {
   const product = useContext(ProductContext);
   const { addItem } = useCart();
   const { isAuthenticated } = useAuth0();
-  console.log(product);
 
   const notifyCart = () => {
     addItem(product);

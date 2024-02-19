@@ -2,24 +2,30 @@
   flex-direction: column;
   width: 40%;
   gap: 1rem;
+  font-family: var(--ff-secondary);
 }
-.payment-form > label,
-.card-flex > label {
+
+.payment-form>label,
+.card-flex>label {
   color: white;
   margin-bottom: -1rem;
 }
+
 .card-flex {
   display: flex;
   justify-content: space-between;
 }
-.card-flex > input {
+
+.card-flex>input {
   width: 50px;
 }
+
 .cardInp::-webkit-outer-spin-button,
 .cardInp::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 .errorMsg {
   margin: 0;
   margin-left: 10px;
@@ -27,10 +33,12 @@
   font-size: 10px;
   margin-top: -10px;
 }
+
 .credit-card {
   margin-top: 2rem;
   display: flex;
   gap: 10px;
+  font-family: var(--ff-secondary);
 }
 
 .crd {
@@ -39,55 +47,66 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .card-front,
 .card-back {
   position: relative;
 }
-.card-front > *,
-.card-back > * {
+
+.card-front>*,
+.card-back>* {
   position: absolute;
   margin: 0;
 }
+
 /* Front of the credit card */
 .card-front {
   background-image: url(../../../assets/images/bg-card-front.png);
 }
+
 .card-frontLogo {
   top: 2%;
   left: 2%;
 }
+
 .card-frontName {
   bottom: 12%;
   left: 6%;
 }
+
 .card-frontNum {
   left: 10%;
   bottom: 40%;
 }
+
 .card-frontExp {
   display: flex;
   right: 10%;
   bottom: 10%;
 }
-.card-frontExp > p {
+
+.card-frontExp>p {
   margin: 0;
 }
+
 /* Back of the credit card */
 .card-back {
   margin-top: 3rem;
   background-image: url(../../../assets/images/bg-card-back.png);
 }
+
 .card-backCVV {
   bottom: 40%;
   right: 10%;
 }
+
 .confirmContainer {
   display: flex;
   gap: 2rem;
   margin-top: 2rem;
 }
 
-.confirmContainer > * {
+.confirmContainer>* {
   padding: 5px 50px;
   font-size: 18px;
   background-color: #58177c;
@@ -95,10 +114,12 @@
   border-radius: 14px;
   border: none;
 }
-.confirmContainer > :first-child:hover {
+
+.confirmContainer> :first-child:hover {
   background-color: #8e25c8;
 }
-.confirmContainer > :nth-child(even):hover {
+
+.confirmContainer> :nth-child(even):hover {
   background-color: #ae2c68;
 }
 

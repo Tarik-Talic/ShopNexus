@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ShopNexus/static/css/main.f52b51ac.css",
+    "main.js": "/ShopNexus/static/js/main.cc4d9c6b.js",
+    "static/media/NexusRocket.svg": "/ShopNexus/static/media/NexusRocket.4c05221928373c36248716c5380ee1ef.svg",
+    "static/media/Ecommerce-HeroImage.png": "/ShopNexus/static/media/Ecommerce-HeroImage.ee1ffd569f6c951b81b6.png",
+    "static/media/HomePageLaptop.svg": "/ShopNexus/static/media/HomePageLaptop.9afd4b8027d72183dd5a4dae0a6dcbb3.svg",
+    "static/media/bg-card-back.png": "/ShopNexus/static/media/bg-card-back.23f68fa3aa3d5b33dfc8.png",
+    "static/media/bg-card-front.png": "/ShopNexus/static/media/bg-card-front.8153e2ca184402a8385f.png",
+    "static/media/Logo.png": "/ShopNexus/static/media/Logo.74ab9659bf5c3cc7349c.png",
+    "static/media/undraw_empty_cart_co35.svg": "/ShopNexus/static/media/undraw_empty_cart_co35.b5055e56282bba2de480b7282277f3f9.svg",
+    "index.html": "/ShopNexus/index.html",
+    "static/media/icon-complete.svg": "/ShopNexus/static/media/icon-complete.8fd757c0c5c44b1d597ca411400e046d.svg",
+    "static/media/card-logo.svg": "/ShopNexus/static/media/card-logo.8ca9036515954c3f8191559dce9c7bdf.svg",
+    "main.f52b51ac.css.map": "/ShopNexus/static/css/main.f52b51ac.css.map",
+    "main.cc4d9c6b.js.map": "/ShopNexus/static/js/main.cc4d9c6b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f52b51ac.css",
+    "static/js/main.cc4d9c6b.js"
+  ]
+}
